@@ -79,4 +79,5 @@ theme: huno
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/haojianxun/haojianxun.github.io.git
+  repo: git@github.com/haojianxun/haojianxun.github.io.git
+  branch: master
