@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: HAOJX
 subtitle:
 description:
 keywords:
@@ -74,10 +74,13 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: huno
+# Social
+social:
+  github: haojianxun
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com/haojianxun/haojianxun.github.io.git
+  repo: ssh://git@github.com/haojianxun/haojianxun.github.io
   branch: master
