@@ -417,87 +417,16 @@ chrootchroot意味着切根 , 原来的根是在/  ,有了chroot技术的话 , �
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker私有仓库--docker-distribution/" >
+        <a class="abstract-title" href = "/2018/10/14/docker相关概念/" >
             
-                <span>docker私有仓库--docker-distribution</span>
+                <span>docker相关概念</span>
         </a>
         <div class="abstract-content">
-            安装docker-distribution
-1yum install -y docker-distribution
-配置文件路径
-12cd /etc/docker-distribution/registryvim config.yml
-启动服务
-1systemctl start docker-distribution
-当我们推的时候 , 走的是https协议 而这里的是http
-所以我们可以在我们要push的主机上的/etc/docker/daemon.json增加一项
-123&#123;    "insecure-registries":["REGISTRY:5000"]&#125;
+            docker daemon启动的时候用libcontainer启动  启动的驱动是execdrive  下载相关的数据是由graphdb保存的,下载下来保存的分层结构是保存在/var/lib/docker/graph中
+index管理用户账号,访问权限,镜像,和镜像标签等相关
+repostory  由具有某个功能镜像的所有相关版本集合
+registry 保存docker镜像及镜像层次结构和元数据
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker镜像加速的方法/" >
-            
-                <span>docker镜像加速的方法</span>
-        </a>
-        <div class="abstract-content">
-            方法1
-1234567vim /etc/docker/daemon.json请在该配置文件中加入（没有该文件的话，请先建一个）：&#123;  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]&#125;
-method 2
-1234vim /lib/systemd/system/docker.service在ExecStart下加入如下选项:--registry-mirror=MIRROR-ADDRESS
-method 3
-12345678指向私有仓库 harborvim /etc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker自定义docker0网桥网络属性/" >
-            
-                <span>docker自定义docker0网桥网络属性</span>
-        </a>
-        <div class="abstract-content">
-            vim /etc/docker/daemon.json
-12345678&#123;    "bip": "192.168.1.5/24",    "fixed-cidr": "10.20.0.0/16",    "fixed-cidr-v6": "2001:db8::/64",    "mtu": 1500,    "default-gateway": "10.20.1.1",    "dns": ["10.20.1.2","10.20.1.3"]&#125;
-核心选项bip  bip即bridge ip之意
-文档地址:https://docs.docker.com/network/b...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -591,24 +520,21 @@ vendor registry:...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker网络/" >
+        <a class="abstract-title" href = "/2018/10/14/docker私有仓库--docker-distribution/" >
             
-                <span>docker网络</span>
+                <span>docker私有仓库--docker-distribution</span>
         </a>
         <div class="abstract-content">
-            ovs sdn
-closed container只有lo接口
-bridgedocker0 是个交换机 给他地址就可以也成为网桥 
-查看docker网络
-1docker network inspect bridge
-查看网桥
-1brctl show
-docker网络的创建的时候  一半的网卡在docker上 一般的网卡在docker0上
-查看网络
-1ip link show
-就可以看到这些网络  @后面的字符就代表另外一半网卡  那半个网卡是在docker容器中
-进入docker中就可以看到另外一个网卡 使用命令ifconfig 查看
-进入docker中  ping docker0网桥的话...
+            安装docker-distribution
+1yum install -y docker-distribution
+配置文件路径
+12cd /etc/docker-distribution/registryvim config.yml
+启动服务
+1systemctl start docker-distribution
+当我们推的时候 , 走的是https协议 而这里的是http
+所以我们可以在我们要push的主机上的/etc/docker/daemon.json增加一项
+123&#123;    "insecure-registries":["REGISTRY:5000"]&#125;
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -620,8 +546,6 @@ docker网络的创建的时候  一半的网卡在docker上 一般的网卡在do
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker网络">docker网络</a>
     
 </div>
             
@@ -670,16 +594,92 @@ docker网络的创建的时候  一半的网卡在docker上 一般的网卡在do
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker相关概念/" >
+        <a class="abstract-title" href = "/2018/10/14/docker网络/" >
             
-                <span>docker相关概念</span>
+                <span>docker网络</span>
         </a>
         <div class="abstract-content">
-            docker daemon启动的时候用libcontainer启动  启动的驱动是execdrive  下载相关的数据是由graphdb保存的,下载下来保存的分层结构是保存在/var/lib/docker/graph中
-index管理用户账号,访问权限,镜像,和镜像标签等相关
-repostory  由具有某个功能镜像的所有相关版本集合
-registry 保存docker镜像及镜像层次结构和元数据
-
+            ovs sdn
+closed container只有lo接口
+bridgedocker0 是个交换机 给他地址就可以也成为网桥 
+查看docker网络
+1docker network inspect bridge
+查看网桥
+1brctl show
+docker网络的创建的时候  一半的网卡在docker上 一般的网卡在docker0上
+查看网络
+1ip link show
+就可以看到这些网络  @后面的字符就代表另外一半网卡  那半个网卡是在docker容器中
+进入docker中就可以看到另外一个网卡 使用命令ifconfig 查看
+进入docker中  ping docker0网桥的话...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker网络">docker网络</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/docker自定义docker0网桥网络属性/" >
+            
+                <span>docker自定义docker0网桥网络属性</span>
+        </a>
+        <div class="abstract-content">
+            vim /etc/docker/daemon.json
+12345678&#123;    "bip": "192.168.1.5/24",    "fixed-cidr": "10.20.0.0/16",    "fixed-cidr-v6": "2001:db8::/64",    "mtu": 1500,    "default-gateway": "10.20.1.1",    "dns": ["10.20.1.2","10.20.1.3"]&#125;
+核心选项bip  bip即bridge ip之意
+文档地址:https://docs.docker.com/network/b...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/docker镜像加速的方法/" >
+            
+                <span>docker镜像加速的方法</span>
+        </a>
+        <div class="abstract-content">
+            方法1
+1234567vim /etc/docker/daemon.json请在该配置文件中加入（没有该文件的话，请先建一个）：&#123;  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]&#125;
+method 2
+1234vim /lib/systemd/system/docker.service在ExecStart下加入如下选项:--registry-mirror=MIRROR-ADDRESS
+method 3
+12345678指向私有仓库 harborvim /etc...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2196,9 +2196,180 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 78
+        Total : 85
         </div>
         <!-- search  -->
         
@@ -2224,12 +2395,12 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中api-server的地址改成公网ip和负载均衡/" >kubernetes中api-server的地址改成公网ip和负载均衡</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中的Projected Volume是什么/" >kubernetes中的Projected Volume是什么</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中的Projected Volume是什么/" >kubernetes中的Projected Volume是什么</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中api-server的地址改成公网ip和负载均衡/" >kubernetes中api-server的地址改成公网ip和负载均衡</a>
         </li>
     
     
@@ -2269,32 +2440,12 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器内配置文件和环境变量,参数的传递/" >容器内配置文件和环境变量,参数的传递</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes访问集群节点的资源/" >kubernetes访问集群节点的资源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的认证---default-token/" >kubernetes中的认证---default-token</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
         </li>
     
     
@@ -2309,17 +2460,12 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的账号/" >kubernetes中的账号</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的认证---default-token/" >kubernetes中的认证---default-token</a>
         </li>
     
     
@@ -2329,27 +2475,27 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的账号/" >kubernetes中的账号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/基于canel的网络策略/" >基于canel的网络策略</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/linux的五种IO模型/" >linux的五种IO模型</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器内配置文件和环境变量,参数的传递/" >容器内配置文件和环境变量,参数的传递</a>
         </li>
     
     
@@ -2359,27 +2505,12 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源限制/" >kubernetes资源限制</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/基于canel的网络策略/" >基于canel的网络策略</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源指标metrics-server/" >kubernetes资源指标metrics-server</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/部署一个有证书的ingress-nginx/" >部署一个有证书的ingress-nginx</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
         </li>
     
     
@@ -2389,12 +2520,42 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/部署一个有证书的ingress-nginx/" >部署一个有证书的ingress-nginx</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/linux的五种IO模型/" >linux的五种IO模型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源定义清单中的apiVersion说明/" >kubernetes资源定义清单中的apiVersion说明</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源清单/" >kubernetes资源清单</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源指标metrics-server/" >kubernetes资源指标metrics-server</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源限制/" >kubernetes资源限制</a>
         </li>
     
     
@@ -2409,67 +2570,17 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >kubernetes中部署一个服务用的简单模板</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源清单/" >kubernetes资源清单</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes初探/" >kubernetes初探</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes调度pod策略/" >kubernetes调度pod策略</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes HPA/" >kubernetes HPA</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
         </li>
     
     
@@ -2484,12 +2595,72 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >kubernetes中部署一个服务用的简单模板</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes调度pod策略/" >kubernetes调度pod策略</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes HPA/" >kubernetes HPA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/Helm/" >Helm</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
         </li>
     
     
@@ -2499,17 +2670,17 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关机构/" >docker相关机构</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
         </li>
     
     
@@ -2519,7 +2690,7 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
         </li>
     
     
@@ -2534,17 +2705,12 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关机构/" >docker相关机构</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
         </li>
     
     
@@ -2554,7 +2720,17 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker端口映射/" >docker端口映射</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/dockerfile常用指令/" >dockerfile常用指令</a>
         </li>
     
     
@@ -2574,12 +2750,12 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/dockerfile常用指令/" >dockerfile常用指令</a>
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2018/10/12/利用TravisCI同步gcr.io镜像到dockerhub/" >利用TravisCI同步gcr.io镜像到dockerhub</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2018/10/12/利用TravisCI同步gcr.io镜像到dockerhub/" >利用TravisCI同步gcr.io镜像到dockerhub</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2018/08/01/docker是如何创建容器的pid为1的进程的/" >docker是如何创建容器的pid为1的进程的</a>
         </li>
     
     
@@ -2589,7 +2765,27 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2018/07/06/docker是如何做到资源限制的/" >docker是如何做到资源限制的</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/27</span><a class="archive-post-title" href= "/2018/06/27/kubeadm的配置文件路径和意义/" >kubeadm的配置文件路径和意义</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2018/05/03/理解docker的rootfs和分层构建联合挂载的概念/" >理解docker的rootfs和分层构建联合挂载的概念</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2018/03/24/docker exec 是怎么做到进入容器里的呢？/" >docker exec 是怎么做到进入容器里的呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2018/03/11/docker如何修复容器中的 top 指令以及 proc 文件系统中的信息呢/" >docker如何修复容器中的 top 指令以及 /proc 文件系统中的信息呢</a>
         </li>
     
     
@@ -2600,6 +2796,16 @@ registry 保存docker镜像及镜像层次结构和元数据
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href= "/2017/06/22/Docker 容器明文密码解决的2个方法/" >Docker 容器明文密码解决的2个方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span><a class="archive-post-title" href= "/2017/02/11/Docker Daemon 的作用是什么/" >Docker Daemon 的作用是什么</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2723,6 +2929,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="tips"><span class="iconfont-archer">&#xe60a;</span>tips</span>
     
         <span class="sidebar-category-name" data-categories="tips/docker"><span class="iconfont-archer">&#xe60a;</span>tips/docker</span>
+    
+        <span class="sidebar-category-name" data-categories="docker/tips"><span class="iconfont-archer">&#xe60a;</span>docker/tips</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

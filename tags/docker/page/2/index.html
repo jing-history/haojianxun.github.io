@@ -346,86 +346,18 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker端口映射/" >
+        <a class="abstract-title" href = "/2018/10/14/dockerfile常用指令/" >
             
-                <span>docker端口映射</span>
+                <span>dockerfile常用指令</span>
         </a>
         <div class="abstract-content">
-            docker0是NAT网桥 , 因此获得是私有网络地址
-可以把容器想象成宿主机NAT服务背后的主机
-如果开放容器给外部网络访问的话 , 需要在宿主机上为其指定DNAT规则 , 比如:
-
-对宿主机某ip地址的访问全部映射给某容器
-1-A PREROUTING -d 主机IP -j DNAT --to-destination 容器IP
-
-对宿主机某IP地址的某端口的访问映射给某容器地址的某端口
-1-A PREROUTING -d 主机IP -p &#123;tcp|udp&#125; --dport 主机端口 -j DNAT --to-desitination 容器IP:容器端口
-
-
-doc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker存储卷/" >
-            
-                <span>docker存储卷</span>
-        </a>
-        <div class="abstract-content">
-            写时复制
-docker镜像由多个只读层叠加而成 , 启动容器时,docker会加载只读镜像层并在镜像栈顶部添加一个读写层
-如果运行中的容器修改了一个已经存在的文件 , 那该文件将会从下面的只读层复制到读写层,该文件的只读版本仍然存在,只是被读写层中该文件的副本所隐藏 ,此即写时复制(COW)机制 
-docker挂载docker-managerd volume
-123456docker run -it -name NAME -v /data busybox  挂载了一个由docker管理的存储卷  挂载到了docker内部的/data下  对应于宿主机来说 他的目录是在/var/lib/d...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/docker官方设置http_proxy教程/" >
-            
-                <span>docker官方设置http_proxy教程</span>
-        </a>
-        <div class="abstract-content">
-            docker http_proxy
-
+            官方文档:https://docs.docker.com/engine/reference/builder/
+ENV
+${VAR:-STR}  :表示var这个变量 如果有值的话 , 就用自己的值 没有的话 就用STR这个值 , 相当于变量原来有值就用原来的 , .没有的话就用我们给出的值STR—— 相当于给变量设置默认值
+${VAR:+STR}  如果VAR有值 就返回STR
+FROM1FROM &lt;repository&gt;[:&lt;tag&gt;]
+MAINTAINER作者信息
+COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -489,23 +421,225 @@ aufs
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/dockerfile常用指令/" >
+        <a class="abstract-title" href = "/2018/10/14/docker官方设置http_proxy教程/" >
             
-                <span>dockerfile常用指令</span>
+                <span>docker官方设置http_proxy教程</span>
         </a>
         <div class="abstract-content">
-            官方文档:https://docs.docker.com/engine/reference/builder/
-ENV
-${VAR:-STR}  :表示var这个变量 如果有值的话 , 就用自己的值 没有的话 就用STR这个值 , 相当于变量原来有值就用原来的 , .没有的话就用我们给出的值STR—— 相当于给变量设置默认值
-${VAR:+STR}  如果VAR有值 就返回STR
-FROM1FROM &lt;repository&gt;[:&lt;tag&gt;]
-MAINTAINER作者信息
-COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
+            docker http_proxy
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/docker存储卷/" >
+            
+                <span>docker存储卷</span>
+        </a>
+        <div class="abstract-content">
+            写时复制
+docker镜像由多个只读层叠加而成 , 启动容器时,docker会加载只读镜像层并在镜像栈顶部添加一个读写层
+如果运行中的容器修改了一个已经存在的文件 , 那该文件将会从下面的只读层复制到读写层,该文件的只读版本仍然存在,只是被读写层中该文件的副本所隐藏 ,此即写时复制(COW)机制 
+docker挂载docker-managerd volume
+123456docker run -it -name NAME -v /data busybox  挂载了一个由docker管理的存储卷  挂载到了docker内部的/data下  对应于宿主机来说 他的目录是在/var/lib/d...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/docker端口映射/" >
+            
+                <span>docker端口映射</span>
+        </a>
+        <div class="abstract-content">
+            docker0是NAT网桥 , 因此获得是私有网络地址
+可以把容器想象成宿主机NAT服务背后的主机
+如果开放容器给外部网络访问的话 , 需要在宿主机上为其指定DNAT规则 , 比如:
+
+对宿主机某ip地址的访问全部映射给某容器
+1-A PREROUTING -d 主机IP -j DNAT --to-destination 容器IP
+
+对宿主机某IP地址的某端口的访问映射给某容器地址的某端口
+1-A PREROUTING -d 主机IP -p &#123;tcp|udp&#125; --dport 主机端口 -j DNAT --to-desitination 容器IP:容器端口
+
+
+doc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/06/docker是如何做到资源限制的/" >
+            
+                <span>docker是如何做到资源限制的</span>
+        </a>
+        <div class="abstract-content">
+            使用的便是Linux Cgroups技术   全称是 Linux Control Group。它最主要的作用，就是限制一个进程组能够使用的资源上限，包括 CPU、内存、磁盘、网络带宽等等
+在 Linux 中，Cgroups 给用户暴露出来的操作接口是文件系统，即它以文件和目录的方式组织在操作系统的 /sys/fs/cgroup 路径下
+123456789101112[root@aliyun-node01 ~]# mount -t cgroupcgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relat...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/03/理解docker的rootfs和分层构建联合挂载的概念/" >
+            
+                <span>理解docker的rootfs和分层构建联合挂载的概念</span>
+        </a>
+        <div class="abstract-content">
+            一个最常见的 rootfs，或者说容器镜像，会包括如下所示的一些目录和文件，比如 /bin，/etc，/proc 等等：
+12ls /bin dev etc home lib lib64 mnt opt proc root run sbin sys tmp usr var
+Docker 在镜像的设计中，引入了层（layer）的概念。也就是说，用户制作镜像的每一步操作，都会生成一个层，也就是一个增量 rootfs。  用到的技术就是联合文件系统（Union File System） 
+Union File System 也叫 UnionFS ，最主要的功能是将多个不同位置的目录联合挂载（u...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/03/11/docker如何修复容器中的 top 指令以及 proc 文件系统中的信息呢/" >
+            
+                <span>docker如何修复容器中的 top 指令以及 /proc 文件系统中的信息呢</span>
+        </a>
+        <div class="abstract-content">
+            top 是从 /prof/stats 目录下获取数据，所以道理上来讲，容器不挂载宿主机的该目录就可以了。lxcfs就是来实现这个功能的，做法是把宿主机的 /var/lib/lxcfs/proc/memoinfo 文件挂载到Docker容器的/proc/meminfo位置后。容器中进程读取相应文件内容时，LXCFS的FUSE实现会从容器对应的Cgroup中读取正确的内存限制。从而使得应用获得正确的资源约束设定。kubernetes环境下，也能用，以ds 方式运行 lxcfs ，自动给容器注入争取的 proc 信息。 2 用的是vanilla kubernetes，遇到的主要挑战就是性能损失...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/06/22/Docker 容器明文密码解决的2个方法/" >
+            
+                <span>Docker 容器明文密码解决的2个方法</span>
+        </a>
+        <div class="abstract-content">
+            以下内容来源于网络
+第一种方法: 替换volume假设一位用户希望创建一个密码不会泄漏的 MySQL 容器，密码为 daocloud。为了弥合明文密码问题，绕过环境变量，我们可以按照以下三个步骤来完成。
+
+创建两个 MySQL 容器 MySQL1 与 MySQL2，MySQL 的 root 密码分别为 daocloud 与 docker；
+
+待 MySQL1 启动完毕，使用docker stop 命令停止 MySQL1 容器，并将 MySQL1 容器的 volume1 全部拷贝出来，最终使用docker rm 命令删除 MySQL1 容器；
+
+待 MySQL2 启动完毕，使用docker...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/22</span>
             </div>
             <!-- tags  -->
             
@@ -2052,9 +2186,180 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 78
+        Total : 85
         </div>
         <!-- search  -->
         
@@ -2080,12 +2385,12 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中api-server的地址改成公网ip和负载均衡/" >kubernetes中api-server的地址改成公网ip和负载均衡</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中的Projected Volume是什么/" >kubernetes中的Projected Volume是什么</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中的Projected Volume是什么/" >kubernetes中的Projected Volume是什么</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2018/11/03/kubernetes中api-server的地址改成公网ip和负载均衡/" >kubernetes中api-server的地址改成公网ip和负载均衡</a>
         </li>
     
     
@@ -2125,32 +2430,12 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器内配置文件和环境变量,参数的传递/" >容器内配置文件和环境变量,参数的传递</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes访问集群节点的资源/" >kubernetes访问集群节点的资源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的认证---default-token/" >kubernetes中的认证---default-token</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
         </li>
     
     
@@ -2165,17 +2450,12 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的账号/" >kubernetes中的账号</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的认证---default-token/" >kubernetes中的认证---default-token</a>
         </li>
     
     
@@ -2185,27 +2465,27 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的账号/" >kubernetes中的账号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/基于canel的网络策略/" >基于canel的网络策略</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/linux的五种IO模型/" >linux的五种IO模型</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器内配置文件和环境变量,参数的传递/" >容器内配置文件和环境变量,参数的传递</a>
         </li>
     
     
@@ -2215,27 +2495,12 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源限制/" >kubernetes资源限制</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/基于canel的网络策略/" >基于canel的网络策略</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源指标metrics-server/" >kubernetes资源指标metrics-server</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/部署一个有证书的ingress-nginx/" >部署一个有证书的ingress-nginx</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
         </li>
     
     
@@ -2245,12 +2510,42 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/部署一个有证书的ingress-nginx/" >部署一个有证书的ingress-nginx</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/linux的五种IO模型/" >linux的五种IO模型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源定义清单中的apiVersion说明/" >kubernetes资源定义清单中的apiVersion说明</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源清单/" >kubernetes资源清单</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源指标metrics-server/" >kubernetes资源指标metrics-server</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源限制/" >kubernetes资源限制</a>
         </li>
     
     
@@ -2265,67 +2560,17 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >kubernetes中部署一个服务用的简单模板</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源清单/" >kubernetes资源清单</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes初探/" >kubernetes初探</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes调度pod策略/" >kubernetes调度pod策略</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes HPA/" >kubernetes HPA</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
         </li>
     
     
@@ -2340,12 +2585,72 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >kubernetes中部署一个服务用的简单模板</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes调度pod策略/" >kubernetes调度pod策略</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes HPA/" >kubernetes HPA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/Helm/" >Helm</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
         </li>
     
     
@@ -2355,17 +2660,17 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关机构/" >docker相关机构</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
         </li>
     
     
@@ -2375,7 +2680,7 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
         </li>
     
     
@@ -2390,17 +2695,12 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关机构/" >docker相关机构</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
         </li>
     
     
@@ -2410,7 +2710,17 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker端口映射/" >docker端口映射</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/dockerfile常用指令/" >dockerfile常用指令</a>
         </li>
     
     
@@ -2430,12 +2740,12 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/dockerfile常用指令/" >dockerfile常用指令</a>
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2018/10/12/利用TravisCI同步gcr.io镜像到dockerhub/" >利用TravisCI同步gcr.io镜像到dockerhub</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2018/10/12/利用TravisCI同步gcr.io镜像到dockerhub/" >利用TravisCI同步gcr.io镜像到dockerhub</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2018/08/01/docker是如何创建容器的pid为1的进程的/" >docker是如何创建容器的pid为1的进程的</a>
         </li>
     
     
@@ -2445,7 +2755,27 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2018/07/06/docker是如何做到资源限制的/" >docker是如何做到资源限制的</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/27</span><a class="archive-post-title" href= "/2018/06/27/kubeadm的配置文件路径和意义/" >kubeadm的配置文件路径和意义</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/2018/05/03/理解docker的rootfs和分层构建联合挂载的概念/" >理解docker的rootfs和分层构建联合挂载的概念</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2018/03/24/docker exec 是怎么做到进入容器里的呢？/" >docker exec 是怎么做到进入容器里的呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2018/03/11/docker如何修复容器中的 top 指令以及 proc 文件系统中的信息呢/" >docker如何修复容器中的 top 指令以及 /proc 文件系统中的信息呢</a>
         </li>
     
     
@@ -2456,6 +2786,16 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/22</span><a class="archive-post-title" href= "/2017/06/22/Docker 容器明文密码解决的2个方法/" >Docker 容器明文密码解决的2个方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span><a class="archive-post-title" href= "/2017/02/11/Docker Daemon 的作用是什么/" >Docker Daemon 的作用是什么</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2579,6 +2919,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="tips"><span class="iconfont-archer">&#xe60a;</span>tips</span>
     
         <span class="sidebar-category-name" data-categories="tips/docker"><span class="iconfont-archer">&#xe60a;</span>tips/docker</span>
+    
+        <span class="sidebar-category-name" data-categories="docker/tips"><span class="iconfont-archer">&#xe60a;</span>docker/tips</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
