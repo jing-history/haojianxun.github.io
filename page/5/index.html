@@ -359,6 +359,110 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/kubernetes中进入pod运行命令/" >
+            
+                <span>kubernetes进入pod方法</span>
+        </a>
+        <div class="abstract-content">
+            1234kubectl exec POD [-c CONTAINER] -- COMMAND [args...] [options]例如:kubectl exec pod-demo -c myapp  -- /bin/sh -it
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/kubernetes中资源的引用方式/" >
+            
+                <span>kubernetes中资源的引用方式</span>
+        </a>
+        <div class="abstract-content">
+            资源引用path语法
+1/apis/GROUP/VERSION/namespaces/NAMESPACE/TYPE/NAME
+例子:
+1selfLink: /api/v1/namespaces/default/pods/nginx-deploy-59c86578c8-ml57k
+可以用curl访问
+svc的资源记录
+svc.cluster.local. 
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/kubernetes中资源yaml模板创建/" >
+            
+                <span>kubernetes中资源yaml模板创建</span>
+        </a>
+        <div class="abstract-content">
+            在部署各类资源的时候 需要自己填写各种属性 , 其实我们可以创建一个模板,创建完成之后再修改其中的值即可, 这样的方便和准确了许多
+创建模板的方法
+1kubectl create SERVICENAME NAME -o yaml --dry-run &gt; SOMENAME.yaml
+比如创建资源认证的模板
+1kubectl create serviceaccount mysa -o yaml --dry-run &gt; mysa.yaml
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/14/基于canel的网络策略/" >
             
                 <span>基于canel的网络策略</span>
@@ -392,38 +496,15 @@ Iss...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes组件/" >
+        <a class="abstract-title" href = "/2018/10/14/yaml转json/" >
             
-                <span>kubernetes组件</span>
+                <span>yaml转json</span>
         </a>
         <div class="abstract-content">
-            组件
-master:
+            在yaml中  
 
-API Server
-
-Scheduler
-
-Controller-Manager
-
-
-Node:
-
-kubelet
-容器引擎(docker)
-kube-proxy
-
-Pod
-
-自主式pod
-控制器管理的pod
-Replication-Controller
-Deployment
-StatefulSet
-DaemonSet
-Job , Cronjob
-
-
+加个小横线代表这个是个列表    所有列表都可以写成中括号 , 在kubernetes中explain的时候, 当出现&lt;[]object&gt;的时候 , 就表明 这个是列表 , 得用小横线去添加
+所有映射数据可以写为花括号
 
 
         </div>
@@ -436,7 +517,7 @@ Job , Cronjob
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
     
 </div>
             
@@ -449,32 +530,15 @@ Job , Cronjob
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/linux的五种IO模型/" >
+        <a class="abstract-title" href = "/2018/10/14/prometheus安装/" >
             
-                <span>linux的五种IO模型</span>
+                <span>prometheus安装</span>
         </a>
         <div class="abstract-content">
-            举例网络中socket的一个read()是个一个IO操作命令,具体流程如下
-
-应用程序调用read命令,通知内核读取数据
-
-内核创建文件描述符
-
-内核从物理层收到读指令,从网络中获取数据包
-
-数据包传到TCP/IP层,解析数据包的头
-
-内核将数据包缓存在文件描述符的读缓存区 这里的读缓存区是在内核中
-
-当文件描述符读缓存区数据字节数大于应用程序定义的低水位的时候,此时文件描述符处于读就绪的状态
-
-将读缓存区的数据复制到应用程序(用户区)返回
-
-
-每个文件描述符都有自己的读缓存区和写缓存区,读缓存区对于read操作,写缓存区对应write操作
-读缓存区和写缓冲区都是在内核中
-
-现在Linu...
+            1.prometheus下载安装包并解压
+1234567wget https://github.com/prometheus/prometheus/releases/download/v2.3.2/prometheus-2.3.2.linux-amd64.tar.gztar xvzf prometheus-2.3.2.linux-amd64.tar.gzmv prometheus-2.3.2.linux-amd64.tar.gz  prometheuscd prometheus
+1.2.启动
+1234567./prometheus查看帮助./prometheus -h指定配置文件运行./...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -485,111 +549,7 @@ Job , Cronjob
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "linux base">linux base</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes dashboard部署/" >
-            
-                <span>kubernetes dashboard部署</span>
-        </a>
-        <div class="abstract-content">
-            
-部署123kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml//详细情况可以去github上去看  地址是https://github.com/kubernetes/dashboard
-
-将Service改成NodePort1kubectl patch svc kubernetes-dashboard -p &apos;&#123;&quot;spec&quot;:&#123;&quo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >
-            
-                <span>kubernetes ingress controller的配置和工作过程</span>
-        </a>
-        <div class="abstract-content">
-            我们暴露外部服务一般用的是NodePort , 但是nodeport暴露服务有一个问题  , 就是每个node都会占一个端口去暴露, 而且前面没有统一的服务入口 没有负载均衡 ,nodeport是基于4层调度 这也是问题
-NodePort的访问路径是
-NodePort: client—–&gt;NodeIP:NodePort—–&gt;ClusterIP:ServicePort—-&gt;PodIP:containerPort
-在访问NodeIP:NodePort 的时候 , 要加一个负载均衡
-我们可以部署一个基于七层的pod调度器 , 运行在用户空间 , 来接管访问的流量 , 监听在宿...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ingress">ingress</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes高级调度方式/" >
-            
-                <span>kubernetes高级调度方式</span>
-        </a>
-        <div class="abstract-content">
-            节点亲和性
-1kubectl explain pod.spec.affiniy
-taint的effect定义对pod排斥效果:
-NoSchedule: 仅影响调度过程 , 对现存pod对象不产生影响
-NoExecute: 既影响调度过程 也影响现在的pod对象
-PreferNoSchedule:  影响调度过程  不过你非要调度也可以 
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes调度">kubernetes调度</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
     
 </div>
             
@@ -645,20 +605,18 @@ se...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes中部署prometheus/" >
+        <a class="abstract-title" href = "/2018/10/14/kubernetes ConfigMap/" >
             
-                <span>kubernetes中部署prometheus</span>
+                <span>kubernetes ConfigMap</span>
         </a>
         <div class="abstract-content">
-            前提: 部署了metrics-server
-用于测试环境的简单部署
-1git clone https://github.com/iKubernetes/k8s-prom.git
-12cd k8s-promkubectl apply -f namespace.yaml
-12cd prometheuskubectl apply-f ./
-12cd ../node_exporterkubectl apply -f ./
-之后就可以访问了 端口是30090
-把prometheus收集到的数据可以让自定义的api访问
-12cd k8s-prom/kube-state-metrics/kubectl...
+            用命令行的方式创建一个configmap1kubectl create configmap nginx-config --from-literal=nginx_port=80 --from-literal=server_name=myapp.test.com
+查看刚刚创建的configmap
+1kubectl get cm
+通过文件制作ConfigMap创建一个文件
+vim www.cofig
+12345server &#123;    server_name myapp.test.com;    listen 80;    root /data/web/html/;&#125;
+使用命...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -671,7 +629,7 @@ se...
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "configmap">configmap</a>
     
 </div>
             
@@ -684,18 +642,12 @@ se...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes HPA/" >
+        <a class="abstract-title" href = "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >
             
-                <span>kubernetes HPA</span>
+                <span>kubernetes中部署一个服务用的简单模板</span>
         </a>
         <div class="abstract-content">
-            查看帮助
-1kubectl explain hpa
-先创建一个有资源限制的pod
-1kubectl run myapp --image=ikubernetes/myapp:v1 --replicas=1 --requests=&apos;cpu=50m,memory=256Mi&apos; --limits=&apos;cpu=50m,memory=256Mi&apos; --labels=&apos;app=myapp&apos; --expose --port=80
-创建一个HPA
-1kubectl autoscale --help  //查看帮助
-1kubectl autoscal...
+            123456789101112131415161718192021222324252627282930313233343536apiVersion: v1kind: Servicemetadata:  name:  namespace:spec:  selector:    app:  ports:    name:    targetPort:    port:         --- apiVersion: apps/v1 kind: Deployment metadata:   name:   namespace: spec:   replicas:   selector:    ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -703,14 +655,6 @@ se...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
             </div>
             <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "HPA">HPA</a>
-    
-</div>
             
         </div>
     </article>
@@ -721,14 +665,14 @@ se...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes中查看pod内部的dns解析/" >
+        <a class="abstract-title" href = "/2018/10/14/kubernetes初探/" >
             
-                <span>kubernetes中查看pod内部的dns解析</span>
+                <span>kubernetes初探</span>
         </a>
         <div class="abstract-content">
-            查看当前coredns解析的地址是什么
-123456kubectl get pod -n kube-system -o wide  //查看当前运行的pod 其中dns的地址是10.96.0.10kubectl get svc -n kube-system   //查看dns解析的地址  NAME       TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)         AGEkube-dns   ClusterIP   10.96.0.10   &lt;none&gt;        53/UDP,53/TCP   1d
-先创建一个pod...
+            描述节点的信息1kubectl describe node node01   //描述node01节点上的信息
+创建一个应用12345kubectl run nginx-deploy --iamge=nginx --dry-run=true //表示创建了一个名为nginx-deploy的deployment  镜像用的nginx的最新镜像 干跑模式为真,表示这条命令不会真的执行kubectl run nginx-deploy --iamge=nginx//去掉干跑模式 就会创建
+查看创建的应用123kubectl get pods   //查看创建的podsNAME          ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -740,8 +684,6 @@ se...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
     
 </div>
             
@@ -751,7 +693,7 @@ se...
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/page/4/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -2671,9 +2613,94 @@ se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 89
+        Total : 92
         </div>
         <!-- search  -->
         
@@ -2689,7 +2716,17 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2018/11/10/在kubernetes中如何添加CRD(Custom Resource Definition)/" >在kubernetes中如何添加CRD(Custom Resource Definition)(1)</a>
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2018/11/27/kubernetes怎么修改与设置触发资源回收策略的默认值/" >kubernetes怎么修改与设置触发资源回收策略的默认值</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2018/11/25/在kubernetes中如何让pod绑定在某颗cpu上/" >在kubernetes中如何让pod绑定在某颗cpu上</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2018/11/25/当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么/" >当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么</a>
         </li>
     
     
@@ -2700,6 +2737,11 @@ se...
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2018/11/10/kubernetes动态准入控制Initializers是什么/" >kubernetes动态准入控制Initializers是什么</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2018/11/10/在kubernetes中如何添加CRD(Custom Resource Definition)/" >在kubernetes中如何添加CRD(Custom Resource Definition)(1)</a>
         </li>
     
     
@@ -2764,7 +2806,22 @@ se...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的认证---default-token/" >kubernetes中的认证---default-token</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
         </li>
     
     
@@ -2774,7 +2831,12 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的账号/" >kubernetes中的账号</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes访问集群节点的资源/" >kubernetes访问集群节点的资源</a>
         </li>
     
     
@@ -2789,22 +2851,7 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes访问集群节点的资源/" >kubernetes访问集群节点的资源</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
         </li>
     
     
@@ -2814,22 +2861,12 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中的账号/" >kubernetes中的账号</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源限制/" >kubernetes资源限制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中网络插件地址/" >kubernetes中网络插件地址</a>
         </li>
     
     
@@ -2839,22 +2876,17 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源yaml模板创建/" >kubernetes中资源yaml模板创建</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/部署一个有证书的ingress-nginx/" >部署一个有证书的ingress-nginx</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源限制/" >kubernetes资源限制</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/prometheus安装/" >prometheus安装</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源清单/" >kubernetes资源清单</a>
         </li>
     
     
@@ -2869,12 +2901,7 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中网络插件地址/" >kubernetes中网络插件地址</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源yaml模板创建/" >kubernetes中资源yaml模板创建</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
         </li>
     
     
@@ -2884,12 +2911,32 @@ se...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源指标metrics-server/" >kubernetes资源指标metrics-server</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源清单/" >kubernetes资源清单</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/prometheus安装/" >prometheus安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/部署一个有证书的ingress-nginx/" >部署一个有证书的ingress-nginx</a>
         </li>
     
     
@@ -2899,67 +2946,7 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes存储卷/" >kubernetes存储卷</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中docker连到私有仓库认证问题/" >kubernetes中docker连到私有仓库认证问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes调度pod策略/" >kubernetes调度pod策略</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
         </li>
     
     
@@ -2969,7 +2956,17 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes初探/" >kubernetes初探</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
         </li>
     
     
@@ -2979,27 +2976,52 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关机构/" >docker相关机构</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes调度pod策略/" >kubernetes调度pod策略</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/Helm/" >Helm</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes初探/" >kubernetes初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中docker连到私有仓库认证问题/" >kubernetes中docker连到私有仓库认证问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes存储卷/" >kubernetes存储卷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络/" >docker网络</a>
         </li>
     
     
@@ -3014,7 +3036,27 @@ se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/heapster部署/" >heapster部署</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/Helm/" >Helm</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--docker-distribution/" >docker私有仓库--docker-distribution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
         </li>
     
     
@@ -3029,32 +3071,22 @@ se...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/heapster部署/" >heapster部署</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关机构/" >docker相关机构</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--Harbor/" >docker私有仓库--Harbor</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络/" >docker网络</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--docker-distribution/" >docker私有仓库--docker-distribution</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/dockerfile常用指令/" >dockerfile常用指令</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker端口映射/" >docker端口映射</a>
         </li>
     
     
@@ -3069,7 +3101,17 @@ se...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker端口映射/" >docker端口映射</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker官方设置http_proxy教程/" >docker官方设置http_proxy教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/dockerfile常用指令/" >dockerfile常用指令</a>
         </li>
     
     
