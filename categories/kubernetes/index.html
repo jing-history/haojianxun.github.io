@@ -346,6 +346,32 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/12/03/在kubernetes中如何增加和使用node节点上的自定义资源数量/" >
+            
+                <span>在kubernetes中如何增加和使用node节点上的自定义资源数量</span>
+        </a>
+        <div class="abstract-content">
+            在node节点上 , 节点上各个类型资源可用量 , 体现在node对象的status字段中 
+12345678910apiVersion: v1kind: Nodemetadata:  name: node-1...Status:  Capacity:   cpu:  2   memory:  2049008Ki.....
+那么如何增加一个自定义类型资源的数量呢 
+增加方法12345678#启动一个代理kubectl proxy#执行pacth操作curl --header "Content-Type: application/json-patch+json" \--request PA...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/27/kubernetes怎么修改与设置触发资源回收策略的默认值/" >
             
                 <span>kubernetes怎么修改与设置触发资源回收策略的默认值</span>
@@ -412,6 +438,36 @@ BestEffort
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/25/当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么/" >
+            
+                <span>当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么</span>
+        </a>
+        <div class="abstract-content">
+            当Eviction阈值达到的时候 , 会进入MemoryPressure或者DiskPressure状态 , 从而避免新pod调度上来
+发生的时候, 删除的pod的顺序是:
+
+属于BestEffort类别的pod
+Burstable类型的 , 并且超过requests量的pod
+Guaranteed类型的 , 并且当pod超过limits设置的值 , 或者触发了MemoryPressure或者DiskPressure状态的pod
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/25/在kubernetes中如何让pod绑定在某颗cpu上/" >
             
                 <span>在kubernetes中如何让pod绑定在某颗cpu上</span>
@@ -449,45 +505,15 @@ pod的CPU资源设置 , requests和limits必须相同
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/25/当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么/" >
+        <a class="abstract-title" href = "/2018/11/10/kubernetes CRD下篇--编写自定义控制器/" >
             
-                <span>当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么</span>
+                <span>kubernetes CRD下篇--编写自定义控制器</span>
         </a>
         <div class="abstract-content">
-            当Eviction阈值达到的时候 , 会进入MemoryPressure或者DiskPressure状态 , 从而避免新pod调度上来
-发生的时候, 删除的pod的顺序是:
-
-属于BestEffort类别的pod
-Burstable类型的 , 并且超过requests量的pod
-Guaranteed类型的 , 并且当pod超过limits设置的值 , 或者触发了MemoryPressure或者DiskPressure状态的pod
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/10/kubernetes是如何创建api对象的/" >
-            
-                <span>kubernetes是如何创建api对象的</span>
-        </a>
-        <div class="abstract-content">
-            一个yaml文件提交之后 , 会交到apiserver那里 , apiserver的handler会更加根据资源定义来找到要创建的类型定义 
-在创建这个类型的对象的过程中 , APIServer会进行一个Convert工作, 即把用户提交的一个yaml文件转换成一个Super Version的对象 , 它是该API资源类型所有版本的字段全集 , 接下来APIServer会进行Admission()和Validation()操作 
-Admission操作包括Admission Controller和Initializer
-Validation操作是要验证这个API字段是否合法 , 如果在A...
+            自定义控制器的工作流程
+通过Informer , 从 Kubernetes 的 APIServer 里获取它所关心的对象 , Informer 与 API 对象是一一对应的 , 我们下面的例子的informer就是 Network 对象的 Informer（Network Informer）
+而informer通过这个对象资源对象的client的对象来传递参数, 并和APIServer维持连接 , 使用的是一个叫Reflector 包 , client通过ListAndWatch 的方法来”获取”和”监听”要获取对象的变化
+在 ListAndWatch 机制下，一旦 APIServer ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -511,15 +537,15 @@ Validation操作是要验证这个API字段是否合法 , 如果在A...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/10/kubernetes CRD下篇--编写自定义控制器/" >
+        <a class="abstract-title" href = "/2018/11/10/kubernetes是如何创建api对象的/" >
             
-                <span>kubernetes CRD下篇--编写自定义控制器</span>
+                <span>kubernetes是如何创建api对象的</span>
         </a>
         <div class="abstract-content">
-            自定义控制器的工作流程
-通过Informer , 从 Kubernetes 的 APIServer 里获取它所关心的对象 , Informer 与 API 对象是一一对应的 , 我们下面的例子的informer就是 Network 对象的 Informer（Network Informer）
-而informer通过这个对象资源对象的client的对象来传递参数, 并和APIServer维持连接 , 使用的是一个叫Reflector 包 , client通过ListAndWatch 的方法来”获取”和”监听”要获取对象的变化
-在 ListAndWatch 机制下，一旦 APIServer ...
+            一个yaml文件提交之后 , 会交到apiserver那里 , apiserver的handler会更加根据资源定义来找到要创建的类型定义 
+在创建这个类型的对象的过程中 , APIServer会进行一个Convert工作, 即把用户提交的一个yaml文件转换成一个Super Version的对象 , 它是该API资源类型所有版本的字段全集 , 接下来APIServer会进行Admission()和Validation()操作 
+Admission操作包括Admission Controller和Initializer
+Validation操作是要验证这个API字段是否合法 , 如果在A...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -629,39 +655,6 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/05/kuberadm初始化的时候使用自定义镜像源方法/" >
-            
-                <span>kuberadm初始化的时候使用自定义镜像源方法</span>
-        </a>
-        <div class="abstract-content">
-            ##第一种方法
-可以添加环境变量 , 推荐使用阿里云的源
-12export KUBE_REPO_PREFIX=&quot;registry-vpc.cn-beijing.aliyuncs.com/bbt_k8s&quot;export KUBE_ETCD_IMAGE=&quot;registry-vpc.cn-beijing.aliyuncs.com/bbt_k8s/etcd-amd64:3.0.17&quot;
-还有就是pod的基础镜像pause是从出谷歌的gcr里面拉去的 ,我们修改kubelet的启动参数,让他变成从我们指定的镜像仓库拉去
-修改/etc/systemd/system...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
             </div>
             <!-- tags  -->
             
@@ -2521,28 +2514,9 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 94
         </div>
         <!-- search  -->
         
@@ -2555,6 +2529,11 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span><a class="archive-post-title" href= "/2018/12/03/在kubernetes中如何增加和使用node节点上的自定义资源数量/" >在kubernetes中如何增加和使用node节点上的自定义资源数量</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2718,7 +2697,7 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源yaml模板创建/" >kubernetes中资源yaml模板创建</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
         </li>
     
     
@@ -2728,12 +2707,12 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中网络插件地址/" >kubernetes中网络插件地址</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源yaml模板创建/" >kubernetes中资源yaml模板创建</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
         </li>
     
     
@@ -2748,7 +2727,12 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中网络插件地址/" >kubernetes中网络插件地址</a>
         </li>
     
     
@@ -2759,11 +2743,6 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
         </li>
     
     
@@ -2793,22 +2772,27 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes存储卷/" >kubernetes存储卷</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中docker连到私有仓库认证问题/" >kubernetes中docker连到私有仓库认证问题</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
         </li>
     
     
@@ -2823,7 +2807,7 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
         </li>
     
     
@@ -2833,7 +2817,7 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes存储卷/" >kubernetes存储卷</a>
         </li>
     
     
@@ -2843,12 +2827,7 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中docker连到私有仓库认证问题/" >kubernetes中docker连到私有仓库认证问题</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
         </li>
     
     
@@ -2858,7 +2837,22 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署prometheus/" >kubernetes中部署prometheus</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络/" >docker网络</a>
         </li>
     
     
@@ -2868,12 +2862,32 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--docker-distribution/" >docker私有仓库--docker-distribution</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--Harbor/" >docker私有仓库--Harbor</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/heapster部署/" >heapster部署</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--docker-distribution/" >docker私有仓库--docker-distribution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关概念/" >docker相关概念</a>
         </li>
     
     
@@ -2888,52 +2902,12 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker自定义docker0网桥网络属性/" >docker自定义docker0网桥网络属性</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关概念/" >docker相关概念</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络/" >docker网络</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--Harbor/" >docker私有仓库--Harbor</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker官方设置http_proxy教程/" >docker官方设置http_proxy教程</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
         </li>
     
     
@@ -2944,6 +2918,11 @@ Initializers的工作原理和使用方法将一个编写好的 Initializer，�
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker存储卷/" >docker存储卷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker官方设置http_proxy教程/" >docker官方设置http_proxy教程</a>
         </li>
     
     
