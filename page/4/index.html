@@ -359,6 +359,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/kubernetes集群的外部地址和内部地址/" >
+            
+                <span>kubernetes集群的外部地址和内部地址</span>
+        </a>
+        <div class="abstract-content">
+            查看kubernetes的内部通讯地址
+1kubectl get svc
+12NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGEkubernetes   ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP   46d
+这个10.96.0.1就是内部的地址 , 是集群内部pod访问api-server的地址 , 可以查看具体的内容
+1kubectl get svc kubernetes
+12345678910111213Name:        ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/14/用entrypoint脚本来初始化docker自定义配置文件-以nginx为例/" >
             
                 <span>用entrypoint脚本来初始化docker自定义配置文件-以nginx为例</span>
@@ -380,42 +414,6 @@ vim Dockerfile
             <!-- tags  -->
             
             <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >
-            
-                <span>容器核心技术--chroot ,namespace,cgroups,LCX,和docker</span>
-        </a>
-        <div class="abstract-content">
-            虚拟化的发展
-主机级虚拟化
-容器级虚拟化
-
-开始是jail , 用来隔离进程 ,起到安全的作用 , 之后有人把这个功能移植到了unix上 , 叫着vserver  , 其中有个重要的功能就是chroot 
-chrootchroot意味着切根 , 原来的根是在/  ,有了chroot技术的话 , 就可以把根切到别的地方,这个地方有和根一样的基于FHS定于的目录 ,之后运行进程 , 进程就以为这就是根了 , 这样就实现一个类似于虚拟机的环境 , 但是这样做也有问题 , 这并不能实现与其他用户和宿主机的彻底隔离 , 其实这个虚拟的环境用的还是宿主机的内核 , 那这个虚拟的环境要运行指令的时候,...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
@@ -539,29 +537,50 @@ serviceaccount:  pod中的容器要访问api的时候用的
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes资源限制/" >
+        <a class="abstract-title" href = "/2018/10/14/kubernetes访问集群节点的资源/" >
             
-                <span>kubernetes资源限制</span>
+                <span>kubernetes访问集群节点的资源</span>
         </a>
         <div class="abstract-content">
-            1颗逻辑的cpu  
-1= 1000millicores
-QoS类型
+            可以开一个本地代理
+1kubectl proxy --port=8080
+之后用curl即可访问
 
-Guaranteed   此类拥有最高优先级
-同时设置了CPU和内存的requests和limits , 并且
-limits.cpu=requests.cpu
-limits.memory=requests.memory
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/kubernetes资源指标metrics-server/" >
+            
+                <span>kubernetes资源指标metrics-server</span>
+        </a>
+        <div class="abstract-content">
+            资源指标: metrics-server
+自定义指标: prometheus 
+新一代架构
+核心指标流水线: 由kuberlet , metrics-server以及由API server提供的zpi组成, cpu累计使用率 , 内存实时使用率 , pod的资源占用率个容器的磁盘占用率
 
-Burstable  此类拥有中等优先级
-至少一个容器设置cpu或者内存资源的requests属性
-
-BestEffort
-没有任何一个容器设置了requests或limits属性
-
-
-vim pod-source.yaml
-12345678910111213141516171819apiVersi...
+监控流水线: 用于从系统收集各种指标并提供终端用户 存储系统和HPA 它们包涵核心指标和许多非核心指标 非核心指标不能被k8s所解析
+以后用户访问api群组 , 是通过kube-aggegator来访问 , 这个kube-aggegator同时聚合了由kubernetes自己提供的api群组和metri...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -587,78 +606,32 @@ vim pod-source.yaml
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes中网络插件地址/" >
+        <a class="abstract-title" href = "/2018/10/14/linux的五种IO模型/" >
             
-                <span>kubernetes中网络插件地址</span>
+                <span>linux的五种IO模型</span>
         </a>
         <div class="abstract-content">
-            配置文件在/etc/cni/net.d/目录下
+            举例网络中socket的一个read()是个一个IO操作命令,具体流程如下
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/基于canel的网络策略/" >
-            
-                <span>基于canel的网络策略</span>
-        </a>
-        <div class="abstract-content">
-            Installing Calico for policy and flannel for networkingIf your cluster has RBAC enabled, issue the following command to configure the roles and bindings that Calico requires.
-12kubectl apply -f \https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/hosted/canal/rbac.yaml
-Iss...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes网络策略">kubernetes网络策略</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/kubernetes中进入pod运行命令/" >
-            
-                <span>kubernetes进入pod方法</span>
-        </a>
-        <div class="abstract-content">
-            1234kubectl exec POD [-c CONTAINER] -- COMMAND [args...] [options]例如:kubectl exec pod-demo -c myapp  -- /bin/sh -it
+应用程序调用read命令,通知内核读取数据
 
+内核创建文件描述符
+
+内核从物理层收到读指令,从网络中获取数据包
+
+数据包传到TCP/IP层,解析数据包的头
+
+内核将数据包缓存在文件描述符的读缓存区 这里的读缓存区是在内核中
+
+当文件描述符读缓存区数据字节数大于应用程序定义的低水位的时候,此时文件描述符处于读就绪的状态
+
+将读缓存区的数据复制到应用程序(用户区)返回
+
+
+每个文件描述符都有自己的读缓存区和写缓存区,读缓存区对于read操作,写缓存区对应write操作
+读缓存区和写缓冲区都是在内核中
+
+现在Linu...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -669,9 +642,7 @@ Iss...
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux base">linux base</a>
     
 </div>
             
@@ -701,6 +672,37 @@ daocloud
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
             </div>
             <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/14/部署一个有证书的ingress-nginx/" >
+            
+                <span>部署一个有证书的ingress-nginx</span>
+        </a>
+        <div class="abstract-content">
+            生成证书和secret123456789openssl genrsa -out tls.key 2048openssl req -new -x509 -key tls.key -out tls.crt -subj /C=CN/ST=shanghai/L=shanghai/O=devops/CN=tomcat.test.comkubectl create secret tls tomcat-ingress-secret --cert=tls.crt --key-tls.keykubectl get secretkubectl describe secret tomcat-ingress-s...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ingress-nginx">ingress-nginx</a>
+    
+</div>
             
         </div>
     </article>
@@ -2694,9 +2696,24 @@ daocloud
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2706,6 +2723,20 @@ daocloud
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href= "/2019/01/02/CNCF云原生生态系统大览(CNCF-Cloud-Native-Interactive-Landscape)/" >构建企业级云服务生态指南---CNCF云原生生态系统大览</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
@@ -2827,12 +2858,7 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
         </li>
     
     
@@ -2842,12 +2868,12 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/为什么kubernetes集群上master不会被调度/" >为什么kubernetes集群上master不会被调度</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器内配置文件和环境变量,参数的传递/" >容器内配置文件和环境变量,参数的传递</a>
         </li>
     
     
@@ -2872,57 +2898,22 @@ daocloud
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用ssh进行git登陆和推送/" >使用ssh进行git登陆和推送</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes集群的外部地址和内部地址/" >kubernetes集群的外部地址和内部地址</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/解决kubeadm安装k8s的时候images不能下载的问题--方法2/" >解决kubeadm安装k8s的时候images不能下载的问题--方法2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器发展史和docker容器核心技术--chroot ,namespace和cgroups/" >容器核心技术--chroot ,namespace,cgroups,LCX,和docker</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/容器内配置文件和环境变量,参数的传递/" >容器内配置文件和环境变量,参数的传递</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中网络插件地址/" >kubernetes中网络插件地址</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源yaml模板创建/" >kubernetes中资源yaml模板创建</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/nginx-ingress/" >一个nginx-ingress部署示例</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/linux的五种IO模型/" >linux的五种IO模型</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/使用kubeadm从0开始搭建kubernetesv1.11.1/" >使用kubeadm从0开始搭建kubernetes:v1.11.1</a>
         </li>
     
     
@@ -2932,12 +2923,12 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源定义清单中的apiVersion说明/" >kubernetes资源定义清单中的apiVersion说明</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中进入pod运行命令/" >kubernetes进入pod方法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源yaml模板创建/" >kubernetes中资源yaml模板创建</a>
         </li>
     
     
@@ -2947,12 +2938,52 @@ daocloud
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中资源的引用方式/" >kubernetes中资源的引用方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/nginx-ingress/" >一个nginx-ingress部署示例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/linux的五种IO模型/" >linux的五种IO模型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes组件/" >kubernetes组件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/prometheus安装/" >prometheus安装</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes资源定义清单中的apiVersion说明/" >kubernetes资源定义清单中的apiVersion说明</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/yaml转json/" >yaml转json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/国内docker hub的加速镜像服务/" >国内docker hub的加速镜像服务</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/基于canel的网络策略/" >基于canel的网络策略</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中网络插件地址/" >kubernetes中网络插件地址</a>
         </li>
     
     
@@ -2967,12 +2998,7 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >kubernetes中部署一个服务用的简单模板</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
         </li>
     
     
@@ -2982,47 +3008,7 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes存储卷/" >kubernetes存储卷</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中docker连到私有仓库认证问题/" >kubernetes中docker连到私有仓库认证问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ingress controller的配置和工作过程/" >kubernetes ingress controller的配置和工作过程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes初探/" >kubernetes初探</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
         </li>
     
     
@@ -3032,42 +3018,52 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes RBAC/" >kubernetes RBAC</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes存储卷/" >kubernetes存储卷</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes初探/" >kubernetes初探</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes高级调度方式/" >kubernetes高级调度方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关概念/" >docker相关概念</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes StatefulSet/" >kubernetes StatefulSet</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes ConfigMap/" >kubernetes ConfigMap</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes service实现方法和类型/" >kubernetes service实现方法和类型</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/heapster部署/" >heapster部署</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes dashboard部署/" >kubernetes dashboard部署</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中docker连到私有仓库认证问题/" >kubernetes中docker连到私有仓库认证问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中查看pod内部的dns解析/" >kubernetes中查看pod内部的dns解析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes中部署一个服务用的简单模板/" >kubernetes中部署一个服务用的简单模板</a>
         </li>
     
     
@@ -3077,7 +3073,52 @@ daocloud
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/heapster部署/" >heapster部署</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--docker-distribution/" >docker私有仓库--docker-distribution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关概念/" >docker相关概念</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubeadm init可能出现的问题/" >kubeadm init可能出现的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker相关命令--pull , commit ,save,load/" >docker相关命令--pull , commit ,save,load</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker镜像加速的方法/" >docker镜像加速的方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--Harbor/" >docker私有仓库--Harbor</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker列出镜像用法/" >docker列出镜像用法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络/" >docker网络</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
         </li>
     
     
@@ -3092,22 +3133,7 @@ daocloud
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/kubernetes  RBAC认证和serviceaccount/" >kubernetes认证和serviceaccount</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker私有仓库--Harbor/" >docker私有仓库--Harbor</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络/" >docker网络</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker image分层构建 联合挂载/" >docker</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker网络初探/" >docker网络初探</a>
         </li>
     
     
@@ -3123,6 +3149,11 @@ daocloud
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker端口映射/" >docker端口映射</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2018/10/14/docker image分层构建 联合挂载/" >docker</a>
         </li>
     
     
