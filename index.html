@@ -504,8 +504,8 @@ maxSurge指的是控制器还可以创建多个新的pod,maxUnavailable表示可
                 <span>kubernetes中如何让pod指定声明使用某个特定的initializer</span>
         </a>
         <div class="abstract-content">
-            123456apiVersion: v1kind: Podmetadata  annotations:    &quot;initializer.kubernetes.io/envoy&quot;: &quot;true&quot;    ...
-在metadata中加一个这样的annotation就可以了
+            123456apiVersion: v1kind: Podmetadata  annotations:    "initializer.kubernetes.io/envoy": "true"    ...
+在metadata中加一个类似于这样的annotation就可以了
 
         </div>
         <div class="abstract-post-meta">
