@@ -346,6 +346,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/02/kubernetes中docker连到私有仓库认证问题/" >
+            
+                <span>kubernetes中docker连到私有仓库认证问题</span>
+        </a>
+        <div class="abstract-content">
+            如果docker要连到私有仓库地址的话 , 可以在pod.spec下imagePullSecrets这个选项 这个secret是由secret创建 , 而且是专有的secret类型 , 用来存放账号密码
+目前secret类型分成3类(可以通过kubectl create secret --help来查看帮助)
+
+docker-registery
+generic
+tls  (放证书和私钥)
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/02/kubernetes中的认证---default-token/" >
             
                 <span>kubernetes中的认证---default-token</span>
@@ -649,42 +687,6 @@ ${VAR:+STR}  如果VAR有值 就返回STR
 FROM1FROM &lt;repository&gt;[:&lt;tag&gt;]
 MAINTAINER作者信息
 COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/02/docker列出镜像用法/" >
-            
-                <span>docker列出镜像用法</span>
-        </a>
-        <div class="abstract-content">
-            
-查看镜像、容器、数据卷所占用的空间
-1docker system df
-
-
-##虚悬镜像
-上面的镜像列表中，还可以看到一个特殊的镜像，这个镜像既没有仓库名，也没有标签，均为  
-这个镜像原本是有镜像名和标签的，原来为  mongo:3.2  ，随着官方镜像维护，发布了新版本后，重新  docker pull mongo:3.2  时， mongo:3.2  这个镜像名被转移到了新下载的镜像身上，而旧的镜像上的这个名称则被取消，从而成为了    。除了  docker pull  可能导致这种情况， docker build  也同样可以导致这种现象。由于新旧镜像同名，旧镜像名称被取消，...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2748,9 +2750,50 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2763,6 +2806,11 @@ COPY12COPY &lt;src&gt; ...&lt;dest&gt; 或COPY [&q...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

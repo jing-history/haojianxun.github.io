@@ -359,6 +359,42 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/02/docker列出镜像用法/" >
+            
+                <span>docker列出镜像用法</span>
+        </a>
+        <div class="abstract-content">
+            
+查看镜像、容器、数据卷所占用的空间
+1docker system df
+
+
+##虚悬镜像
+上面的镜像列表中，还可以看到一个特殊的镜像，这个镜像既没有仓库名，也没有标签，均为  
+这个镜像原本是有镜像名和标签的，原来为  mongo:3.2  ，随着官方镜像维护，发布了新版本后，重新  docker pull mongo:3.2  时， mongo:3.2  这个镜像名被转移到了新下载的镜像身上，而旧的镜像上的这个名称则被取消，从而成为了    。除了  docker pull  可能导致这种情况， docker build  也同样可以导致这种现象。由于新旧镜像同名，旧镜像名称被取消，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/02/docker存储卷/" >
             
                 <span>docker存储卷</span>
@@ -642,40 +678,6 @@ docker网络的创建的时候  一半的网卡在docker上 一般的网卡在do
 12345678&#123;    "bip": "192.168.1.5/24",    "fixed-cidr": "10.20.0.0/16",    "fixed-cidr-v6": "2001:db8::/64",    "mtu": 1500,    "default-gateway": "10.20.1.1",    "dns": ["10.20.1.2","10.20.1.3"]&#125;
 核心选项bip  bip即bridge ip之意
 文档地址:https://docs.docker.com/network/b...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/02/docker镜像加速的方法/" >
-            
-                <span>docker镜像加速的方法</span>
-        </a>
-        <div class="abstract-content">
-            方法1
-1234567vim /etc/docker/daemon.json请在该配置文件中加入（没有该文件的话，请先建一个）：&#123;  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]&#125;
-method 2
-1234vim /lib/systemd/system/docker.service在ExecStart下加入如下选项:--registry-mirror=MIRROR-ADDRESS
-method 3
-12345678指向私有仓库 harborvim /etc...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2828,9 +2830,50 @@ method 3
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2843,6 +2886,11 @@ method 3
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

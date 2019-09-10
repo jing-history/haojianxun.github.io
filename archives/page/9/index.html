@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/26/kubernetes中默认调度器是如何调度一个pod的到节点上的/" >
+            
+                <span>kubernetes中默认调度器的调度流程是怎么进行的</span>
+        </a>
+        <div class="abstract-content">
+            kubernetes默认的调度器要调度一个pod到一个节点上 , 它的步骤是这样的:
+
+预选过程(Predicate): 排除不符合pod要求的节点 , 选出符合pod调度的node列表
+优选过程(Priority): 在符合pod的node列表中 , 给每个node打分(1-10分) 
+选择(Select)   选出得分最高的那个node作为最终的调度结果
+
+调度器的核心
+调度器的核心其实是2个独立的循环
+循环一: Informer Path有许多informer会启动起来, 监听etcd中的pod , node , server等相关api对象 , 比如一个刚刚创建出来的node ,...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/25/在kubernetes中如何让pod绑定在某颗cpu上/" >
             
                 <span>在kubernetes中如何让pod绑定在某颗cpu上</span>
@@ -621,35 +652,6 @@ Validation操作是要验证这个API字段是否合法 , 如果在A...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/03/kubernetes中api-server的地址改成公网ip和负载均衡/" >
-            
-                <span>kubernetes中api-server的地址改成公网ip和负载均衡</span>
-        </a>
-        <div class="abstract-content">
-            通常情况下，我们的集群都是内网集群，只暴露一个公网ip，我希望通过本地访问这个集群，这时候只能通过公网ip访问。 这时候应该怎么配置呢？我们一步一步的思考，刚才我们说了，Kubeadm在初始化的时候会为管理员生成一个 Kubeconfig文件，把它下载下来 是不是就可以？事实证明这样不行， 因为这个集群是内网集群，Kubeconfig文件 中APIServer的地址是内网ip。所以无法访问到。那么我把内网ip改成 APIServer公网ip是不是就可以了 呢？经过实验发现也是不可以的，会报 出认证无法通过的错误。为什么认证无法通过？这要回顾我们刚刚讲过的服务端认证的流程，刚才说一个客户端...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/03</span>
             </div>
             <!-- tags  -->
             
@@ -2708,9 +2710,50 @@ Validation操作是要验证这个API字段是否合法 , 如果在A...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2723,6 +2766,11 @@ Validation操作是要验证这个API字段是否合法 , 如果在A...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

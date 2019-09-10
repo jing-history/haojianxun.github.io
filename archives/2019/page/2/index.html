@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/02/tcpdump nc nmap/" >
+            
+                <span>tcpdump nc nmap</span>
+        </a>
+        <div class="abstract-content">
+            123tcpdump -i eth0  //指定eth0tcpdump -i eth0 tcp port 80 -nn  //-nn表示  第一个n代表ip地址转为数字 第二个n是端口转为数字格式 表示目标地址或者源地址的80端口tcpdump -i eth0 tcp dst port 80 -nn  //表示目标地址的80端口
+123tcpdump	-X : 十六进制和ascii码	-A: ASCII
+12345678nc   netcat的简称还有一个nc是ncat 由nmap提供nc -l 1234 &gt; /tmp/fstab  //监听在本机1234端口 之后写文件到/tmp...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/02/使用ssh进行git登陆和推送/" >
             
                 <span>使用ssh进行git登陆和推送</span>
@@ -645,37 +676,6 @@ svc.cluster.local.
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes 存储卷">kubernetes 存储卷</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/02/kubernetes初探/" >
-            
-                <span>kubernetes初探</span>
-        </a>
-        <div class="abstract-content">
-            描述节点的信息1kubectl describe node node01   //描述node01节点上的信息
-创建一个应用12345kubectl run nginx-deploy --iamge=nginx --dry-run=true //表示创建了一个名为nginx-deploy的deployment  镜像用的nginx的最新镜像 干跑模式为真,表示这条命令不会真的执行kubectl run nginx-deploy --iamge=nginx//去掉干跑模式 就会创建
-查看创建的应用123kubectl get pods   //查看创建的podsNAME          ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
 </div>
             
@@ -2728,9 +2728,50 @@ svc.cluster.local.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2743,6 +2784,11 @@ svc.cluster.local.
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

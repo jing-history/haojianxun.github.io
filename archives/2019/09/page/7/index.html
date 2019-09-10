@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/02/docker镜像加速的方法/" >
+            
+                <span>docker镜像加速的方法</span>
+        </a>
+        <div class="abstract-content">
+            方法1
+1234567vim /etc/docker/daemon.json请在该配置文件中加入（没有该文件的话，请先建一个）：&#123;  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]&#125;
+method 2
+1234vim /lib/systemd/system/docker.service在ExecStart下加入如下选项:--registry-mirror=MIRROR-ADDRESS
+method 3
+12345678指向私有仓库 harborvim /etc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/02/heapster部署/" >
             
                 <span>heapster部署</span>
@@ -2528,9 +2562,50 @@ Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2543,6 +2618,11 @@ Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

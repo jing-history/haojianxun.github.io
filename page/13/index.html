@@ -359,6 +359,34 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/03/24/docker exec 是怎么做到进入容器里的呢？/" >
+            
+                <span>docker exec 是怎么做到进入容器里的呢？</span>
+        </a>
+        <div class="abstract-content">
+            先查看当前docker容器进程号
+1docker inspect --format '&#123;&#123; .State.Pid &#125;&#125;' CONTAINER ID #CONTAINER ID可以用命令docker ps 查看
+获得pid进程号为
+12# docker inspect --format '&#123;&#123; .State.Pid &#125;&#125;' da27b7caa4bd10822
+用这个查看10822进程对于的所有namespace文件
+1234567# ll /proc/10822/nslrwxrwxrwx 1 root root...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/03/11/docker如何修复容器中的 top 指令以及 proc 文件系统中的信息呢/" >
             
                 <span>docker如何修复容器中的 top 指令以及 /proc 文件系统中的信息呢</span>
@@ -2642,9 +2670,50 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2657,6 +2726,11 @@ More...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

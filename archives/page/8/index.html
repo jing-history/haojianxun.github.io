@@ -346,6 +346,31 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/01/kubernetes中如何让pod指定声明使用某个特定的initializer/" >
+            
+                <span>kubernetes中如何让pod指定声明使用某个特定的initializer</span>
+        </a>
+        <div class="abstract-content">
+            123456apiVersion: v1kind: Podmetadata  annotations:    "initializer.kubernetes.io/envoy": "true"    ...
+在metadata中加一个类似于这样的annotation就可以了
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/01/10/kubernetes的本地持久化存储--Local Persistent Volume解析/" >
             
                 <span>kubernetes的本地持久化存储--Local Persistent Volume解析</span>
@@ -605,37 +630,6 @@ BestEffort
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/26/kubernetes中默认调度器是如何调度一个pod的到节点上的/" >
-            
-                <span>kubernetes中默认调度器的调度流程是怎么进行的</span>
-        </a>
-        <div class="abstract-content">
-            kubernetes默认的调度器要调度一个pod到一个节点上 , 它的步骤是这样的:
-
-预选过程(Predicate): 排除不符合pod要求的节点 , 选出符合pod调度的node列表
-优选过程(Priority): 在符合pod的node列表中 , 给每个node打分(1-10分) 
-选择(Select)   选出得分最高的那个node作为最终的调度结果
-
-调度器的核心
-调度器的核心其实是2个独立的循环
-循环一: Informer Path有许多informer会启动起来, 监听etcd中的pod , node , server等相关api对象 , 比如一个刚刚创建出来的node ,...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/26</span>
             </div>
             <!-- tags  -->
             
@@ -2688,9 +2682,50 @@ BestEffort
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2703,6 +2738,11 @@ BestEffort
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

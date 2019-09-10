@@ -346,6 +346,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/03/kubernetes中api-server的地址改成公网ip和负载均衡/" >
+            
+                <span>kubernetes中api-server的地址改成公网ip和负载均衡</span>
+        </a>
+        <div class="abstract-content">
+            通常情况下，我们的集群都是内网集群，只暴露一个公网ip，我希望通过本地访问这个集群，这时候只能通过公网ip访问。 这时候应该怎么配置呢？我们一步一步的思考，刚才我们说了，Kubeadm在初始化的时候会为管理员生成一个 Kubeconfig文件，把它下载下来 是不是就可以？事实证明这样不行， 因为这个集群是内网集群，Kubeconfig文件 中APIServer的地址是内网ip。所以无法访问到。那么我把内网ip改成 APIServer公网ip是不是就可以了 呢？经过实验发现也是不可以的，会报 出认证无法通过的错误。为什么认证无法通过？这要回顾我们刚刚讲过的服务端认证的流程，刚才说一个客户端...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/03/kubernetes中的Projected Volume是什么/" >
             
                 <span>kubernetes中的Projected Volume是什么</span>
@@ -649,30 +678,6 @@ max_fails: 在fail_timeout时间内 , 最大 失败次数 , 当达到最大失�
 fail_timeout : 默认10s
 
 ip_hash算法基于客户端ip地址作为hash算法的关键字 ,映射到上游特定服务器中, 对ipv4来说使用前3个字节作为关键字 , ipv6使用完整地...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/15/nginx中缓存用法和优化/" >
-            
-                <span>nginx中缓存用法和优化</span>
-        </a>
-        <div class="abstract-content">
-            语法:
-12345678910111213Syntax:  proxy_cache zone | off;Default:  proxy_cache off;Context:  http, server, locationSyntax:proxy_cache_path path [levels=levels] [use_temp_path=on|off]keys_zone=name:size [inactive=time] [max_size=size] [manager_files=number][manager_sleep=time] [manager_threshold=time]...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2730,9 +2735,50 @@ ip_hash算法基于客户端ip地址作为hash算法的关键字 ,映射到上�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2745,6 +2791,11 @@ ip_hash算法基于客户端ip地址作为hash算法的关键字 ,映射到上�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">

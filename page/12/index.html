@@ -359,6 +359,32 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/10/Nginx中HTTP请求的11个阶段之第二阶段和第四阶段---rewrite阶段/" >
+            
+                <span>Nginx中HTTP请求的11个阶段之第二阶段和第四阶段---rewrite阶段</span>
+        </a>
+        <div class="abstract-content">
+            ##说明
+要说明的是 , 这个rewrite有2个 , 一个是server_rewrite , 一个是rewrite , 这个阶段是由http框架执行的  ,  他们执行的阶段顺序是这样的:  server_rewrite(第二阶段)------&gt;find_config(第三阶段)-----&gt;rewrite(第四阶段) , 但是server_rewrite阶段和rewrite阶段用的都是同一个模块:rewrite模块
+rewrite模块提供了以下指令:
+return指令123456Syntax:return code [text];return code URL;return...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/10/Nginx中HTTP请求的11个阶段之第六阶段---PREACCESS (limit_req ,limit_conn模块)/" >
             
                 <span>Nginx中HTTP请求的11个阶段之第六阶段---PREACCESS (limit_req ,limit_conn模块)</span>
@@ -645,34 +671,6 @@ Union File System 也叫 UnionFS ，最主要的功能是将多个不同位置�
         <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/24/docker exec 是怎么做到进入容器里的呢？/" >
-            
-                <span>docker exec 是怎么做到进入容器里的呢？</span>
-        </a>
-        <div class="abstract-content">
-            先查看当前docker容器进程号
-1docker inspect --format '&#123;&#123; .State.Pid &#125;&#125;' CONTAINER ID #CONTAINER ID可以用命令docker ps 查看
-获得pid进程号为
-12# docker inspect --format '&#123;&#123; .State.Pid &#125;&#125;' da27b7caa4bd10822
-用这个查看10822进程对于的所有namespace文件
-1234567# ll /proc/10822/nslrwxrwxrwx 1 root root...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/24</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2812,9 +2810,50 @@ Union File System 也叫 UnionFS ，最主要的功能是将多个不同位置�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2827,6 +2866,11 @@ Union File System 也叫 UnionFS ，最主要的功能是将多个不同位置�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2019/09/07/kuberntes开发教程系列(2)  了解client-go是什么/" >kuberntes开发教程系列(2):了解client-go是什么</a>
+        </li>
     
     
         <li class="archive-post-item">
