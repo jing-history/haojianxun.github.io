@@ -2,6 +2,454 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>haojianxun.github.io/2019/09/08/kuberntes%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97(3)%E4%BA%86%E8%A7%A3%E5%92%8C%E7%BC%96%E5%86%99Custom%20Resources/</loc>
+    
+    <lastmod>2019-09-12T16:19:36.352Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2016/05/04/yaml%E8%BD%ACjson/</loc>
+    
+    <lastmod>2019-09-12T16:17:14.902Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/20/%E4%BD%BF%E7%94%A8ssh%E8%BF%9B%E8%A1%8Cgit%E7%99%BB%E9%99%86%E5%92%8C%E6%8E%A8%E9%80%81/</loc>
+    
+    <lastmod>2019-09-12T16:16:01.447Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/02/06/kubernetes%E8%AE%BF%E9%97%AE%E9%9B%86%E7%BE%A4%E8%8A%82%E7%82%B9%E7%9A%84%E8%B5%84%E6%BA%90/</loc>
+    
+    <lastmod>2019-09-12T16:15:47.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/12/kubernetes%E4%B8%AD%E7%9A%84%E8%AE%A4%E8%AF%81---default-token/</loc>
+    
+    <lastmod>2019-09-12T16:15:33.628Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/02/kubernetes%E4%B8%AD%E7%9A%84%E8%B4%A6%E5%8F%B7/</loc>
+    
+    <lastmod>2019-09-12T16:15:22.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/08/12/kubernetes%E9%9B%86%E7%BE%A4%E7%9A%84%E5%A4%96%E9%83%A8%E5%9C%B0%E5%9D%80%E5%92%8C%E5%86%85%E9%83%A8%E5%9C%B0%E5%9D%80/</loc>
+    
+    <lastmod>2019-09-12T16:15:09.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/05/kubernetes%E4%B8%AD%E7%9A%84%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B%E5%92%8C%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/</loc>
+    
+    <lastmod>2019-09-12T16:14:52.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/09/kubernetes%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%A2%AB%E8%AE%A4%E8%AF%81%E7%9A%84%E7%94%A8%E6%88%B7/</loc>
+    
+    <lastmod>2019-09-12T16:14:34.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/02/kubeadm%20init%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2019-09-12T16:14:20.843Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/09/kubernetes%20%20RBAC%E8%AE%A4%E8%AF%81%E5%92%8Cserviceaccount/</loc>
+    
+    <lastmod>2019-09-12T16:14:08.399Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/05/kubernetes%20ConfigMap/</loc>
+    
+    <lastmod>2019-09-12T16:13:56.871Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/09/kubernetes%20dashboard%E9%83%A8%E7%BD%B2/</loc>
+    
+    <lastmod>2019-09-12T16:13:46.257Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/02/03/kubernetes%20HPA/</loc>
+    
+    <lastmod>2019-09-12T16:13:31.298Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/02/kubernetes%20ingress%20controller%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B/</loc>
+    
+    <lastmod>2019-09-12T16:13:19.893Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/03/06/kubernetes%20RBAC/</loc>
+    
+    <lastmod>2019-09-12T16:13:06.489Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/05/kubernetes%20service%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E5%9E%8B/</loc>
+    
+    <lastmod>2019-09-12T16:12:53.417Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/05/kubernetes%20StatefulSet/</loc>
+    
+    <lastmod>2019-09-12T16:12:40.170Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/04/kubernetes%E5%88%9D%E6%8E%A2/</loc>
+    
+    <lastmod>2019-09-12T16:12:26.754Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/08/kubernetes%E5%AD%98%E5%82%A8%E5%8D%B7/</loc>
+    
+    <lastmod>2019-09-12T16:12:14.868Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/02/kubernetes%E9%AB%98%E7%BA%A7%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F/</loc>
+    
+    <lastmod>2019-09-12T16:12:02.351Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/08/09/kubernetes%E4%B8%ADdocker%E8%BF%9E%E5%88%B0%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E8%AE%A4%E8%AF%81%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2019-09-12T16:11:51.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/07/kubernetes%E4%B8%AD%E9%83%A8%E7%BD%B2prometheus/</loc>
+    
+    <lastmod>2019-09-12T16:11:40.818Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/07/kubernetes%E4%B8%AD%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E6%A8%A1%E6%9D%BF/</loc>
+    
+    <lastmod>2019-09-12T16:11:27.836Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/06/kubernetes%E4%B8%AD%E6%9F%A5%E7%9C%8Bpod%E5%86%85%E9%83%A8%E7%9A%84dns%E8%A7%A3%E6%9E%90/</loc>
+    
+    <lastmod>2019-09-12T16:11:16.046Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/02/kubernetes%E4%B8%AD%E8%BF%9B%E5%85%A5pod%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2019-09-12T16:11:04.015Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/04/02/kubernetes%E4%B8%AD%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E5%9C%B0%E5%9D%80/</loc>
+    
+    <lastmod>2019-09-12T16:10:50.344Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/06/07/kubernetes%E4%B8%AD%E8%B5%84%E6%BA%90yaml%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA/</loc>
+    
+    <lastmod>2019-09-12T16:10:38.913Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/04/kubernetes%E4%B8%AD%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</loc>
+    
+    <lastmod>2019-09-12T16:10:26.678Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/05/kubernetes%E8%B5%84%E6%BA%90%E5%AE%9A%E4%B9%89%E6%B8%85%E5%8D%95%E4%B8%AD%E7%9A%84apiVersion%E8%AF%B4%E6%98%8E/</loc>
+    
+    <lastmod>2019-09-12T16:10:16.089Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/10/01/kubernetes%E8%B5%84%E6%BA%90%E6%B8%85%E5%8D%95/</loc>
+    
+    <lastmod>2019-09-12T16:10:03.400Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/10/09/kubernetes%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/</loc>
+    
+    <lastmod>2019-09-12T16:09:51.042Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/07/kubernetes%E8%B5%84%E6%BA%90%E6%8C%87%E6%A0%87metrics-server/</loc>
+    
+    <lastmod>2019-09-12T16:09:37.211Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/05/nginx-ingress/</loc>
+    
+    <lastmod>2019-09-12T16:09:20.871Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/11/08/%E7%94%A8entrypoint%E8%84%9A%E6%9C%AC%E6%9D%A5%E5%88%9D%E5%A7%8B%E5%8C%96docker%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E4%BB%A5nginx%E4%B8%BA%E4%BE%8B/</loc>
+    
+    <lastmod>2019-09-12T16:09:09.049Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/09/08/%E4%B8%BA%E4%BB%80%E4%B9%88kubernetes%E9%9B%86%E7%BE%A4%E4%B8%8Amaster%E4%B8%8D%E4%BC%9A%E8%A2%AB%E8%B0%83%E5%BA%A6/</loc>
+    
+    <lastmod>2019-09-12T16:08:56.105Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/06/%E4%BD%BF%E7%94%A8kubeadm%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAkubernetesv1.11.1/</loc>
+    
+    <lastmod>2019-09-12T16:08:41.017Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/09/08/%E5%AE%B9%E5%99%A8%E5%86%85%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F,%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/</loc>
+    
+    <lastmod>2019-09-12T16:08:29.490Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/11/05/%E5%AE%B9%E5%99%A8%E5%8F%91%E5%B1%95%E5%8F%B2%E5%92%8Cdocker%E5%AE%B9%E5%99%A8%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF--chroot%20,namespace%E5%92%8Ccgroups/</loc>
+    
+    <lastmod>2019-09-12T16:08:15.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/11/05/%E8%A7%A3%E5%86%B3kubeadm%E5%AE%89%E8%A3%85k8s%E7%9A%84%E6%97%B6%E5%80%99images%E4%B8%8D%E8%83%BD%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%97%AE%E9%A2%98--%E6%96%B9%E6%B3%952/</loc>
+    
+    <lastmod>2019-09-12T16:07:47.865Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/06/kubernetes%E7%BB%84%E4%BB%B6/</loc>
+    
+    <lastmod>2019-09-12T16:07:34.408Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2016/04/02/linux%E7%9A%84%E4%BA%94%E7%A7%8DIO%E6%A8%A1%E5%9E%8B/</loc>
+    
+    <lastmod>2019-09-12T16:07:16.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/02/04/prometheus%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2019-09-12T16:07:06.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/05/04/%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E6%9C%89%E8%AF%81%E4%B9%A6%E7%9A%84ingress-nginx/</loc>
+    
+    <lastmod>2019-09-12T16:06:41.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/09/08/%E5%9F%BA%E4%BA%8Ecanel%E7%9A%84%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5/</loc>
+    
+    <lastmod>2019-09-12T16:06:28.888Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/09/08/Helm/</loc>
+    
+    <lastmod>2019-09-12T16:05:59.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/06/heapster%E9%83%A8%E7%BD%B2/</loc>
+    
+    <lastmod>2019-09-12T16:05:42.532Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/04/docker%20image%E5%88%86%E5%B1%82%E6%9E%84%E5%BB%BA%20%E8%81%94%E5%90%88%E6%8C%82%E8%BD%BD/</loc>
+    
+    <lastmod>2019-09-12T16:05:29.474Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2016/05/04/tcpdump%20nc%20nmap/</loc>
+    
+    <lastmod>2019-09-12T16:05:15.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2016/05/06/dockerfile%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</loc>
+    
+    <lastmod>2019-09-12T16:05:04.058Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2016/08/09/docker%E8%87%AA%E5%AE%9A%E4%B9%89docker0%E7%BD%91%E6%A1%A5%E7%BD%91%E7%BB%9C%E5%B1%9E%E6%80%A7/</loc>
+    
+    <lastmod>2019-09-12T16:04:48.186Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/04/docker%E5%88%97%E5%87%BA%E9%95%9C%E5%83%8F%E7%94%A8%E6%B3%95/</loc>
+    
+    <lastmod>2019-09-12T16:04:36.225Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/03/02/docker%E5%AD%98%E5%82%A8%E5%8D%B7/</loc>
+    
+    <lastmod>2019-09-12T16:04:21.905Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/02/01/docker%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</loc>
+    
+    <lastmod>2019-09-12T16:04:07.864Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2016/01/05/docker%E5%AE%98%E6%96%B9%E8%AE%BE%E7%BD%AEhttp_proxy%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2019-09-12T16:03:56.497Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/02/01/docker%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2019-09-12T16:03:43.945Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/01/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93--docker-distribution/</loc>
+    
+    <lastmod>2019-09-12T16:03:32.259Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/04/docker%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4--pull%20,%20commit%20,save,load/</loc>
+    
+    <lastmod>2019-09-12T16:03:16.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/04/02/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93--Harbor/</loc>
+    
+    <lastmod>2019-09-12T16:03:01.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/04/docker%E7%BD%91%E7%BB%9C/</loc>
+    
+    <lastmod>2019-09-12T16:02:49.815Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/02/docker%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/</loc>
+    
+    <lastmod>2019-09-12T16:02:37.555Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2018/07/05/docker%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</loc>
+    
+    <lastmod>2019-09-12T16:02:20.761Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/05/02/docker%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
+    
+    <lastmod>2019-09-12T16:02:08.556Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>haojianxun.github.io/2017/02/05/%E5%9B%BD%E5%86%85docker%20hub%E7%9A%84%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1/</loc>
+    
+    <lastmod>2019-09-12T16:01:53.057Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>haojianxun.github.io/googleda01691bde8ea9fb.html</loc>
     
     <lastmod>2019-09-10T09:40:25.222Z</lastmod>
@@ -450,450 +898,9 @@
   </url>
   
   <url>
-    <loc>haojianxun.github.io/2019/09/02/%E4%BD%BF%E7%94%A8ssh%E8%BF%9B%E8%A1%8Cgit%E7%99%BB%E9%99%86%E5%92%8C%E6%8E%A8%E9%80%81/</loc>
-    
-    <lastmod>2018-10-12T16:21:17.782Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E8%AE%BF%E9%97%AE%E9%9B%86%E7%BE%A4%E8%8A%82%E7%82%B9%E7%9A%84%E8%B5%84%E6%BA%90/</loc>
-    
-    <lastmod>2018-10-12T09:51:25.785Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E7%9A%84%E8%AE%A4%E8%AF%81---default-token/</loc>
-    
-    <lastmod>2018-10-12T09:51:04.056Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E7%9A%84%E8%B4%A6%E5%8F%B7/</loc>
-    
-    <lastmod>2018-10-12T09:50:21.408Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E9%9B%86%E7%BE%A4%E7%9A%84%E5%A4%96%E9%83%A8%E5%9C%B0%E5%9D%80%E5%92%8C%E5%86%85%E9%83%A8%E5%9C%B0%E5%9D%80/</loc>
-    
-    <lastmod>2018-10-12T09:49:33.941Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E7%9A%84%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B%E5%92%8C%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/</loc>
-    
-    <lastmod>2018-10-12T09:49:08.714Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%A2%AB%E8%AE%A4%E8%AF%81%E7%9A%84%E7%94%A8%E6%88%B7/</loc>
-    
-    <lastmod>2018-10-12T09:48:38.868Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/tcpdump%20nc%20nmap/</loc>
-    
-    <lastmod>2018-09-28T10:06:16.886Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E9%AB%98%E7%BA%A7%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/linux%E7%9A%84%E4%BA%94%E7%A7%8DIO%E6%A8%A1%E5%9E%8B/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/nginx-ingress/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/prometheus%E5%AE%89%E8%A3%85/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/yaml%E8%BD%ACjson/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E4%BD%BF%E7%94%A8kubeadm%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAkubernetesv1.11.1/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E4%B8%BA%E4%BB%80%E4%B9%88kubernetes%E9%9B%86%E7%BE%A4%E4%B8%8Amaster%E4%B8%8D%E4%BC%9A%E8%A2%AB%E8%B0%83%E5%BA%A6/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E5%9B%BD%E5%86%85docker%20hub%E7%9A%84%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E5%AE%B9%E5%99%A8%E5%86%85%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F,%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E5%9F%BA%E4%BA%8Ecanel%E7%9A%84%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E7%94%A8entrypoint%E8%84%9A%E6%9C%AC%E6%9D%A5%E5%88%9D%E5%A7%8B%E5%8C%96docker%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E4%BB%A5nginx%E4%B8%BA%E4%BE%8B/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E5%AE%B9%E5%99%A8%E5%8F%91%E5%B1%95%E5%8F%B2%E5%92%8Cdocker%E5%AE%B9%E5%99%A8%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF--chroot%20,namespace%E5%92%8Ccgroups/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E8%A7%A3%E5%86%B3kubeadm%E5%AE%89%E8%A3%85k8s%E7%9A%84%E6%97%B6%E5%80%99images%E4%B8%8D%E8%83%BD%E4%B8%8B%E8%BD%BD%E7%9A%84%E9%97%AE%E9%A2%98--%E6%96%B9%E6%B3%952/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E6%9C%89%E8%AF%81%E4%B9%A6%E7%9A%84ingress-nginx/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>haojianxun.github.io/about/index.html</loc>
     
     <lastmod>2018-09-28T10:02:01.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4--pull%20,%20commit%20,save,load/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%BD%91%E7%BB%9C/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E8%87%AA%E5%AE%9A%E4%B9%89docker0%E7%BD%91%E6%A1%A5%E7%BD%91%E7%BB%9C%E5%B1%9E%E6%80%A7/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/heapster%E9%83%A8%E7%BD%B2/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubeadm%20init%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93--Harbor/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93--docker-distribution/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20%20RBAC%E8%AE%A4%E8%AF%81%E5%92%8Cserviceaccount/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20ConfigMap/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20HPA/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20RBAC/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20StatefulSet/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20dashboard%E9%83%A8%E7%BD%B2/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20ingress%20controller%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%20service%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E5%9E%8B/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%ADdocker%E8%BF%9E%E5%88%B0%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E8%AE%A4%E8%AF%81%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E5%9C%B0%E5%9D%80/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E8%B5%84%E6%BA%90yaml%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E8%BF%9B%E5%85%A5pod%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E9%83%A8%E7%BD%B2prometheus/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E6%9F%A5%E7%9C%8Bpod%E5%86%85%E9%83%A8%E7%9A%84dns%E8%A7%A3%E6%9E%90/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E4%B8%AD%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E6%A8%A1%E6%9D%BF/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E5%AD%98%E5%82%A8%E5%8D%B7/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E5%88%9D%E6%8E%A2/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E7%BB%84%E4%BB%B6/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E8%B5%84%E6%BA%90%E5%AE%9A%E4%B9%89%E6%B8%85%E5%8D%95%E4%B8%AD%E7%9A%84apiVersion%E8%AF%B4%E6%98%8E/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E8%B5%84%E6%BA%90%E6%8C%87%E6%A0%87metrics-server/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/kubernetes%E8%B5%84%E6%BA%90%E6%B8%85%E5%8D%95/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.521Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/Helm/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%20image%E5%88%86%E5%B1%82%E6%9E%84%E5%BB%BA%20%E8%81%94%E5%90%88%E6%8C%82%E8%BD%BD/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/dockerfile%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E5%88%97%E5%87%BA%E9%95%9C%E5%83%8F%E7%94%A8%E6%B3%95/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E5%AD%98%E5%82%A8%E5%8D%B7/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>haojianxun.github.io/2019/09/02/docker%E5%AE%98%E6%96%B9%E8%AE%BE%E7%BD%AEhttp_proxy%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2018-09-28T10:02:01.511Z</lastmod>
     
   </url>
   
