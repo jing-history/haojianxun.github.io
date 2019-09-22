@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/05/kubernetes资源定义清单中的apiVersion说明/" >
+            
+                <span>kubernetes资源定义清单中的apiVersion说明</span>
+        </a>
+        <div class="abstract-content">
+            什么是apiVersion在kubernetes资源定义的时候 第一个要写的就是apiVersion , 那什么是apiVersion呢
+查看当前kubernetes版本支持的apiVersion可以使用下面的命令
+123456789101112131415161718192021222324252627kubectl api-versionsadmissionregistration.k8s.io/v1beta1apiextensions.k8s.io/v1beta1apiregistration.k8s.io/v1apiregistration.k8s.io/v1beta1apps/...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/05/nginx-ingress/" >
             
                 <span>一个nginx-ingress部署示例</span>
@@ -634,43 +665,6 @@ apiserver.crt, apiserver.key for the API server ...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/12/kubernetes中的认证---default-token/" >
-            
-                <span>kubernetes中的认证---default-token</span>
-        </a>
-        <div class="abstract-content">
-            在一个pod中 , pod可以通过一个token来认证 pod中各个容器
-先查看pod
-1kubectl get pod
-我们随便挑一个pod来看
-1kubectl describe pod myapp-deploy-67f6f6b4dc-zsr5j
-可以看到 , 我们在创建的时候并没有指定存储卷 , 但是他自己就有了一个
-12345Volumes:  default-token-vwdjg:    Type:        Secret (a volume populated by a Secret)    SecretName:  default-token-vwdjg    Opt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
     
 </div>
             
@@ -2855,9 +2849,52 @@ apiserver.crt, apiserver.key for the API server ...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2870,6 +2907,11 @@ apiserver.crt, apiserver.key for the API server ...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">

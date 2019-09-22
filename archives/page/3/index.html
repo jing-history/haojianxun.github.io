@@ -346,6 +346,43 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/25/在kubernetes中如何让pod绑定在某颗cpu上/" >
+            
+                <span>在kubernetes中如何让pod绑定在某颗cpu上</span>
+        </a>
+        <div class="abstract-content">
+            让pod绑定在cpu上 , 可以大大减少上下文切换的次数 ,容器性能可以得到大幅提升 , 那该如何设置呢
+设置的方法很简单
+前置条件:
+
+pod必须是Guaranteed类型的Qos
+pod的CPU资源设置 , requests和limits必须相同
+
+例子:
+1234567891011spec:  containers:  - name: nginx    image: nginx    resources:      limits:        memory: "200Mi"        cpu: "2"      requests:        memory: "200Mi"...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/25/当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么/" >
             
                 <span>当在kubernetes中触发了资源回收策略的时候, pod删除的序列是什么</span>
@@ -608,45 +645,6 @@ Validation操作是要验证这个API字段是否合法 , 如果在A...
         </a>
         <div class="abstract-content">
             通常情况下，我们的集群都是内网集群，只暴露一个公网ip，我希望通过本地访问这个集群，这时候只能通过公网ip访问。 这时候应该怎么配置呢？我们一步一步的思考，刚才我们说了，Kubeadm在初始化的时候会为管理员生成一个 Kubeconfig文件，把它下载下来 是不是就可以？事实证明这样不行， 因为这个集群是内网集群，Kubeconfig文件 中APIServer的地址是内网ip。所以无法访问到。那么我把内网ip改成 APIServer公网ip是不是就可以了 呢？经过实验发现也是不可以的，会报 出认证无法通过的错误。为什么认证无法通过？这要回顾我们刚刚讲过的服务端认证的流程，刚才说一个客户端...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/03/kubernetes中的Projected Volume是什么/" >
-            
-                <span>kubernetes中的Projected Volume是什么</span>
-        </a>
-        <div class="abstract-content">
-            到目前为止，Kubernetes 支持的 Projected Volume 一共有四种：
-
-Secret；
-ConfigMap；
-Downward API；
-ServiceAccountToken。
-
-Secret它的作用，是帮你把 Pod 想要访问的加密数据，存放到 Etcd 中。然后，你就可以通过在 Pod 的容器里挂载 Volume 的方式，访问到这些 Secret 里保存的信息了
-典型的场景是数据库的用户名和密码
-比如
-12345678910....volumes:  - name: mysql-cred    projected:      sources:      - se...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2842,9 +2840,52 @@ Secret它的作用，是帮你把 Pod 想要访问的加密数据，存放到 Et
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2857,6 +2898,11 @@ Secret它的作用，是帮你把 Pod 想要访问的加密数据，存放到 Et
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">

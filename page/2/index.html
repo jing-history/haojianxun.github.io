@@ -359,6 +359,34 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/01/10/kubernetes的本地持久化存储--Local Persistent Volume解析/" >
+            
+                <span>kubernetes的本地持久化存储--Local Persistent Volume解析</span>
+        </a>
+        <div class="abstract-content">
+            Local Persistent Volume是用来做什么的可以实现pod在本地的持久化存储, 而不需要依赖远程存储服务来提供持久化 , 即使这个pod再次被调度的时候 , 也能被再次调度到local pv所在的node
+出现原因既然有了hostPath Volume这种方式 , 为什么还要 再搞一个local PV呢 , 这是因为hostPath Volume这种方式并不适合在线上环境使用 , 原因如下:
+
+如果使用hostPath Volume这种方法 , 还得选择节点来调度
+需要事先创建好目录 , 而且还得注意权限的配置,  比如root用户创建的目录  , 普通用户就用不了了
+不...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/01/02/CNCF云原生生态系统大览(CNCF-Cloud-Native-Interactive-Landscape)/" >
             
                 <span>构建企业级云服务生态指南---CNCF云原生生态系统大览</span>
@@ -623,43 +651,6 @@ BestEffort
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/26</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/25/在kubernetes中如何让pod绑定在某颗cpu上/" >
-            
-                <span>在kubernetes中如何让pod绑定在某颗cpu上</span>
-        </a>
-        <div class="abstract-content">
-            让pod绑定在cpu上 , 可以大大减少上下文切换的次数 ,容器性能可以得到大幅提升 , 那该如何设置呢
-设置的方法很简单
-前置条件:
-
-pod必须是Guaranteed类型的Qos
-pod的CPU资源设置 , requests和limits必须相同
-
-例子:
-1234567891011spec:  containers:  - name: nginx    image: nginx    resources:      limits:        memory: "200Mi"        cpu: "2"      requests:        memory: "200Mi"...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
             
         </div>
     </article>
@@ -2931,9 +2922,52 @@ pod的CPU资源设置 , requests和limits必须相同
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2946,6 +2980,11 @@ pod的CPU资源设置 , requests和limits必须相同
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">

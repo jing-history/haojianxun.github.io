@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>HAOJX |郝建勋的笔记与博客</title>
+    <title>kubernetes开发教程(4)--自动代码生成 · HAOJX |郝建勋的笔记与博客</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >HAOJX</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">kubernetes开发教程(4)--自动代码生成</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>HAOJX</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/collection/770996/2100x900)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            kubernetes开发教程(4)--自动代码生成
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.2k</span>阅读时长: <span class="post-count reading-time">9 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/10</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,130 +393,152 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/22/kubernetes-EFK实践/" >
-            
-                <span>kubernetes EFK实践</span>
-        </a>
-        <div class="abstract-content">
-            以kubernetes项目中的addon里的EFK为例 
-官方github地址: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch
-这个 例子中每个fluentd都是以daemonset的形式部署 , 用于收集日志节点
-检查容器的log-driver配置fluentd要读取/var/log/containers/目录下的log日志，这些日志是从/var/lib/docker/containers/${CONTAINER_ID}/${CONTAINER_ID}-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/21/kubernetes容器日志收集方案/" >
-            
-                <span>kubernetes容器日志收集方案</span>
-        </a>
-        <div class="abstract-content">
-            kubernetes官网文档描述的很详细 , 具体地址是: https://kubernetes.io/docs/concepts/cluster-administration/logging/
-总结如下:
-日志收集的级别是分为三种:
-pod levelpod级别的日志 , 默认是输出到标准输出和标志输入
- 例子:  debug/counter-pod.yaml
-12345678910apiVersion: v1kind: Podmetadata:  name: counterspec:  containers:  - name: count    image: busybox    a...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/05/kubelet是如何操作容器管理pod的/" >
-            
-                <span>kubelet是如何操作容器管理pod的</span>
-        </a>
-        <div class="abstract-content">
-            kubelet是kubernetes中重要的一个组件 , 它运行在每个node上 
-kubelet工作原理
-kubelet的核心便是SyncLoop
-触发SyncLoop的条件:
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>在此讲中, 我们介绍go的自动代码生成功能, 事实上kubernetes在很多地方都在用code generators这个功能, 我接下来会说如何使用code generators来编写custom resources</p>
+<p>在kubernetes开发早期 , 随着越来越多的资源被加进系统, 越来越多的代码不得不被重写。 这个时候代码生成使得代码的维护更加容易 , 在早起是用<a href="https://github.com/kubernetes/gengo" target="_blank" rel="noopener">Gengo library</a> 之后在gengo的基础上, kubernetes发展出了<a href="https://github.com/kubernetes/code-generator" target="_blank" rel="noopener"><em>k8s.io/code-generator</em></a> 它是一个代码生成器的集合</p>
+<h2 id="使用代码生成器"><a href="#使用代码生成器" class="headerlink" title="使用代码生成器"></a>使用代码生成器</h2><p>通常在代码生成器的调用都是一样的方法, 只是group , version等不同而已, 使用<em>k8s.io/code-generator/generate-groups.sh</em>或者<em>hack/update-codegen.sh</em>能更加简单的向CR中添加代码生成</p>
+<p>举个例子, 使用如下方法调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ vendor/k8s.io/code-generator/generate-groups.sh all \</span><br><span class="line">    github.com/programming-kubernetes/cnat/cnat-client-go/pkg/generated</span><br><span class="line">    github.com/programming-kubernetes/cnat/cnat-client-go/pkg/apis \</span><br><span class="line">    cnat:v1alpha1 \</span><br><span class="line">    --output-base <span class="string">"<span class="variable">$&#123;GOPATH&#125;</span>/src"</span> \</span><br><span class="line">    --go-header-file <span class="string">"hack/boilerplate.go.txt"</span></span><br></pre></td></tr></table></figure>
+<p>其中有4个标准的代码生成器</p>
+<ul>
+<li><p>deepcopy-gen</p>
+<p>生成<code>func</code> <code>(t *T)</code> <code>DeepCopy()</code> <code>*T</code> 和<code>func</code> <code>(t *T)</code> <code>DeepCopyInto(*T)</code>方法</p>
+</li>
+<li><p>client-gen</p>
+<p>创建类型化客户端集合(typed client sets)</p>
+</li>
+<li><p>informer-gen</p>
+<p>为CR创建一个informer , 当CR有变化的时候, 这个informer可以基于事件接口获取到信息变更</p>
+</li>
+<li><p>lister-gen</p>
+<p>为CR创建一个listers , 就是为<code>GET</code> and <code>LIST</code>请求提供read-only caching layer</p>
+</li>
+</ul>
+<p>后面2个是构建controller的基础</p>
+<p>让我们先看看上述脚本后面跟的几个参数</p>
+<ul>
+<li>第二个参数是要生成的clients, listers, and informers的包名</li>
+<li>第三个参数是API group的包</li>
+<li>第四个参数是API 组及其版本</li>
+<li>将 –output-base 作为标志传递给所有生成器，以定义在其中找到给定包的基目录</li>
+<li>– go-header-file 使我们能够将版权标头放入生成的代码中</li>
+</ul>
+<p>有些生成器(如 deepcopy-gen)直接在 API group包中创建文件,这些文件遵循标准的命名方案，并生成一个 <em>zz_generated.</em>前缀，以便很容易从版本控制系统中排除它们</p>
+<p>如果这个项目遵循了 k8s.io/sample-controllerーthe 的样本控制器模式，那么这个项目就是一个蓝图项目，它复制了内置在 Kubernetes 的许多控制器所建立的模式ーー那么代码生成就是这样开始的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hack/update-codegen.sh</span><br></pre></td></tr></table></figure>
+<h2 id="用Tag控制生成器"><a href="#用Tag控制生成器" class="headerlink" title="用Tag控制生成器"></a>用Tag控制生成器</h2><p>虽然一些代码生成器行为是通过前面描述的命令行标志(特别是要处理的包)来控制的，但是更多的属性是通过 Go 文件中的标记来控制的</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +some-tag</span></span><br><span class="line"><span class="comment">// +some-other-tag=value</span></span><br></pre></td></tr></table></figure>
+<p>这里有2种形式的tag:</p>
+<ul>
+<li>Global tags ,  在<em>doc.go</em>上方进行标记</li>
+<li>Local tags  声明在struct结构体上方</li>
+</ul>
+<blockquote>
+<p>有许多标记必须直接位于类型(或全局标记的包行)之上的注释中，而其他标记必须与类型(或包行)分开，两者之间必须至少有一个空行。 例如</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">// +second-comment-block-tag</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">// +first-comment-block-tag</span></span><br><span class="line">&gt; <span class="keyword">type</span> Foo <span class="keyword">struct</span> &#123;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>出现这种情况是历史原因, Kubernetes 的 API 文档生成器过去不知道代码生成标签，而只导出第一个注释块。 因此，该块中的标记将显示在 apihtml 文档中</p>
+</blockquote>
+<h3 id="global-tags"><a href="#global-tags" class="headerlink" title="global tags"></a>global tags</h3><p>global tags被写在doc.go中 , 典型的<em>pkg/apis/group/version/doc.go</em>文件长这样:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +k8s:deepcopy-gen=package</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Package v1 is the v1alpha1 version of the API.</span></span><br><span class="line"><span class="comment">// +groupName=cnat.programming-kubernetes.info</span></span><br><span class="line"><span class="keyword">package</span> v1alpha1</span><br></pre></td></tr></table></figure>
+<p>该文件的第一行告诉 deepcopy-gen 默认情况下为该包中的每个类型创建深层复制方法。 如果您的类型不需要深度拷贝,那么您可以使用本地标签<code>// +k8s:deepcopy-gen=false</code> ,如果不启用包范围的深度拷贝，则必须通过 <code>// +k8s:deepcopy-gen=true</code>每个所需类型选择深度拷贝</p>
+<p>第二个标记,<code>// +groupName=example.com</code> 定义了完全限定的 API 组名。 如果 Go 父包名称与组名称不匹配，则此标记是必需的。</p>
+<p> 使用<code>// +groupName</code> tag ,  client generator将使用正确的 HTTP 路径<em>/apis/foo.project.example.com</em>来生成客户机</p>
+<p>除了+groupName  还有一个+groupGoName,它定义了一个定制的 Go 标识符(用于变量和类型名称)来代替父包名称 , 例如，在默认情况下，生成器将使用大写的父包名作为标识 , 这个时候你可以自定义标识</p>
+<h3 id="Local-Tags"><a href="#Local-Tags" class="headerlink" title="Local Tags"></a>Local Tags</h3><p>本地标记可以直接写在 API 类型之上，也可以写在 API 类型之上的第二个注释块中 , 比如下面的例子</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AtSpec defines the desired state of At</span></span><br><span class="line"><span class="keyword">type</span> AtSpec <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// Schedule is the desired time the command is supposed to be executed.</span></span><br><span class="line">    <span class="comment">// Note: the format used here is UTC time https://www.utctime.net</span></span><br><span class="line">    Schedule <span class="keyword">string</span> <span class="string">`json:"schedule,omitempty"`</span></span><br><span class="line">    <span class="comment">// Command is the desired command (executed in a Bash shell) to be executed.</span></span><br><span class="line">    Command <span class="keyword">string</span> <span class="string">`json:"command,omitempty"`</span></span><br><span class="line">    <span class="comment">// Important: Run "make" to regenerate code after modifying this file</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// AtStatus defines the observed state of At</span></span><br><span class="line"><span class="keyword">type</span> AtStatus <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// Phase represents the state of the schedule: until the command is executed</span></span><br><span class="line">    <span class="comment">// it is PENDING, afterwards it is DONE.</span></span><br><span class="line">    Phase <span class="keyword">string</span> <span class="string">`json:"phase,omitempty"`</span></span><br><span class="line">    <span class="comment">// Important: Run "make" to regenerate code after modifying this file</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// +genclient</span></span><br><span class="line"><span class="comment">// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// At runs a command at a given schedule.</span></span><br><span class="line"><span class="keyword">type</span> At <span class="keyword">struct</span> &#123;</span><br><span class="line">    metav1.TypeMeta   <span class="string">`json:",inline"`</span></span><br><span class="line">    metav1.ObjectMeta <span class="string">`json:"metadata,omitempty"`</span></span><br><span class="line"></span><br><span class="line">    Spec   AtSpec   <span class="string">`json:"spec,omitempty"`</span></span><br><span class="line">    Status AtStatus <span class="string">`json:"status,omitempty"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// AtList contains a list of At</span></span><br><span class="line"><span class="keyword">type</span> AtList <span class="keyword">struct</span> &#123;</span><br><span class="line">    metav1.TypeMeta <span class="string">`json:",inline"`</span></span><br><span class="line">    metav1.ListMeta <span class="string">`json:"metadata,omitempty"`</span></span><br><span class="line">    Items           []At <span class="string">`json:"items"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面我们就将一一介绍这些标签</p>
+<h4 id="deepcopy-gen-Tags"><a href="#deepcopy-gen-Tags" class="headerlink" title="deepcopy-gen Tags"></a>deepcopy-gen Tags</h4><p>深度复制方法生成通常默认通过 Global<code>// +k8s:deepcopy-gen=package</code> tag 生成, 如果我们在 API 类型包中有一个 helper 结构,那么我们就必须禁用深度复制生成 , 比如</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +k8s:deepcopy-gen=false</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Helper is a helper struct, not an API type.</span></span><br><span class="line"><span class="keyword">type</span> Helper <span class="keyword">struct</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="runtime-Object-and-DeepCopyObject"><a href="#runtime-Object-and-DeepCopyObject" class="headerlink" title="runtime.Object and DeepCopyObject"></a>runtime.Object and DeepCopyObject</h4><p>有一个特殊的深层复制标签需要多加说明下</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span></span><br></pre></td></tr></table></figure>
+<p>之前我们就说 <code>runtime.Object</code>必须实现DeepCopyObject() runtime.Object方法,原因在于，Kubernetes 内部的通用代码必须能够创建对象的深层副本</p>
+<p>Deepcopyobject ()方法只是调用生成的 DeepCopy 方法。 后者的签名因类型而异(DeepCopy () * t 取决于 t)。 前者的签名总是 DeepCopyObject ()运行时</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(in *T)</span> <span class="title">DeepCopyObject</span><span class="params">()</span> <span class="title">runtime</span>.<span class="title">Object</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> c := in.DeepCopy(); c != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> c</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将本地标签<code>//</code> <code>+k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</code>放在顶级 API 类型之上使用 deepcopy-gen 生成此方法,这告诉 deepcopy-gen 为运行时创建这样一个方法,叫DeepCopyObject()</p>
+<blockquote>
+<p>顶级类型都会被用作<code>runtime.Object</code> ,顶级类型是那些内嵌metav1.TypeMeta 的类型</p>
+</blockquote>
+<p>比如:如果 API 类型有一个接口类型 Foo 的字段 , 比如</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> SomeAPIType <span class="keyword">struct</span> &#123;</span><br><span class="line">  Foo Foo <span class="string">`json:"foo"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>API 类型必须是深复制的，因此字段 Foo 也必须是深复制的。 如果不在 Foo 接口中添加 DeepCopyFoo () Foo，怎么能够以通用方式(不使用类型转换)实现这一点呢？</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Foo <span class="keyword">interface</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    DeepCopyFoo() Foo</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这种情况下，可以使用相同的标签</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +k8s:deepcopy-gen:interfaces=&lt;package&gt;.Foo</span></span><br><span class="line"><span class="keyword">type</span> FooImplementation <span class="keyword">struct</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="client-gen-Tags"><a href="#client-gen-Tags" class="headerlink" title="client-gen Tags"></a>client-gen Tags</h4><p>最后，还有一些控制 client-gen 的标签</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +genclient</span></span><br></pre></td></tr></table></figure>
+<p>它告诉 client-gen 为此类型创建一个客户机 , 但是他不能置于list类型之上  比如 自定义类型foo 就可以放在foo类型上 , 但是不能放在foolist之上 , 不清楚foo和foolist类型的, 请看官方的simple-controller项目的<a href="https://github.com/kubernetes/sample-controller/blob/master/pkg/apis/samplecontroller/v1alpha1/types.go" target="_blank" rel="noopener">type.go</a>文件</p>
+<p>当然还有其他例子, 用法</p>
+<p>比如</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +genclient:noStatus</span></span><br></pre></td></tr></table></figure>
+<p>如果没有这个标记，client-gen 将盲目地生成 UpdateStatus ()方法。 但是，只有在 resource custom definition 清单中实际启用了 / status 子资源才能不加</p>
+<p>再比如</p>
+<p>客户机生成器必须选择正确的 HTTP 路径，无论是否带有名称空间。 对于集群范围的资源，必须使用以下标记</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +genclient:nonNamespaced</span></span><br></pre></td></tr></table></figure>
+<p>默认是生成一个名称空间的客户机。 同样，这必须与 CRD 清单中的范围设置相匹配。 对于特殊用途的客户机，您可能还希望详细控制提供哪些 HTTP 方法。 你可以通过使用几个标签来做到这一点，例如</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +genclient:noVerbs</span></span><br><span class="line"><span class="comment">// +genclient:onlyVerbs=create,delete</span></span><br><span class="line"><span class="comment">// +genclient:skipVerbs=get,list,create,update,patch,delete,watch</span></span><br><span class="line"><span class="comment">// +genclient:method=Create,verb=create,</span></span><br><span class="line"><span class="comment">// result=k8s.io/apimachinery/pkg/apis/meta/v1.Status</span></span><br></pre></td></tr></table></figure>
+<p>对于<code>// +genclient:method=</code>标记,一个常见的情况是添加一个方法来缩放资源 , 如果CR启用 / Scale 子资源,下面的标签创建了相应的客户端方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// +genclient:method=GetScale,verb=get,subresource=scale,\</span></span><br><span class="line"><span class="comment">//    result=k8s.io/api/autoscaling/v1.Scale</span></span><br><span class="line"><span class="comment">// +genclient:method=UpdateScale,verb=update,subresource=scale,\</span></span><br><span class="line"><span class="comment">//    input=k8s.io/api/autoscaling/v1.Scale,result=k8s.io/api/autoscaling/v1.Scale</span></span><br></pre></td></tr></table></figure>
+<p>第一个标签创建getter <code>GetScale</code>  , 第二个创建setter <code>UpdateScale</code> </p>
+<h4 id="informer-gen-and-lister-gen"><a href="#informer-gen-and-lister-gen" class="headerlink" title="informer-gen and lister-gen"></a>informer-gen and lister-gen</h4><p>代码自动生成会生成对应类型的专门informer和lister的</p>
 
-pod更新事件
-pod生命周期变化
-kubelet本身设置的执行周期
-定时清理事件
-
-SyncLoop循环kubelet在启动的时候, 首先第一件事情会做的就是先去设置listers , 就是注册它所关心的informer
-之后会依次启动其他的:
-
-diskSpaceManage
-oomWatcher
-initNetworkPlugin
-chooseRuntime(dockershim , remote)
-N...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/03/在kubernetes中如何增加和使用node节点上的自定义资源数量/" >
-            
-                <span>在kubernetes中如何增加和使用node节点上的自定义资源数量</span>
-        </a>
-        <div class="abstract-content">
-            在node节点上 , 节点上各个类型资源可用量 , 体现在node对象的status字段中 
-12345678910apiVersion: v1kind: Nodemetadata:  name: node-1...Status:  Capacity:   cpu:  2   memory:  2049008Ki.....
-那么如何增加一个自定义类型资源的数量呢 
-增加方法12345678#启动一个代理kubectl proxy#执行pacth操作curl --header "Content-Type: application/json-patch+json" \--request PA...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="haojianxun.github.io">HAOJX</a>
+            <p>原文链接：<a href="haojianxun.github.io/2019/09/10/kubernetes开发教程(4)自动代码生成/">haojianxun.github.io/2019/09/10/kubernetes开发教程(4)自动代码生成/</a>
+            <p>发表日期：<a href="haojianxun.github.io/2019/09/10/kubernetes开发教程(4)自动代码生成/">九月 10日 2019, 12:00:00 凌晨</a>
+            <p>更新日期：<a href="haojianxun.github.io/2019/09/10/kubernetes开发教程(4)自动代码生成/">September 22nd 2019, 6:41:15 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/03</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/08/kuberntes开发教程系列(3)了解和编写Custom Resources/" title= "kuberntes开发教程系列(3)--了解和编写Custom Resources">
+                    <div class="prevTitle">kuberntes开发教程系列(3)--了解和编写Custom Resources</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "qX8HVjkGrEtM7e6o1RGfcE5K-gzGzoHsz",
+        appKey: "q6vTiIUxgUePH7KN2r1bSk6W",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!  如果有技术问题 , 可以在评论中留下您的昵称和邮箱 , 以便于回复",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -546,6 +623,24 @@ N...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用代码生成器"><span class="toc-number">1.</span> <span class="toc-text">使用代码生成器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用Tag控制生成器"><span class="toc-number">2.</span> <span class="toc-text">用Tag控制生成器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#global-tags"><span class="toc-number">2.1.</span> <span class="toc-text">global tags</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Local-Tags"><span class="toc-number">2.2.</span> <span class="toc-text">Local Tags</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#deepcopy-gen-Tags"><span class="toc-number">2.2.1.</span> <span class="toc-text">deepcopy-gen Tags</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#runtime-Object-and-DeepCopyObject"><span class="toc-number">2.2.2.</span> <span class="toc-text">runtime.Object and DeepCopyObject</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#client-gen-Tags"><span class="toc-number">2.2.3.</span> <span class="toc-text">client-gen Tags</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#informer-gen-and-lister-gen"><span class="toc-number">2.2.4.</span> <span class="toc-text">informer-gen and lister-gen</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -3500,6 +3595,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

@@ -346,6 +346,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/15/nginx中的keepalive , 共享内存/" >
+            
+                <span>nginx中的keepalive , 共享内存</span>
+        </a>
+        <div class="abstract-content">
+            对上游服务使用keepalive对上游连接的http头部设置
+12proxy_http_version 1.1;proxy_set_header Connection &quot;&quot;;
+指令:
+123Syntax:  keepalive connections;Default:  —Context:  upstream
+指定上游服务器域名解析1234567Syntax:  resolver address ... [valid=time] [ipv6=on|off];Default:  —Context:  http, server, locationSyntax:  reso...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/15/nginx使用open_file_cache提升系统性能/" >
             
                 <span>nginx使用open_file_cache提升系统性能</span>
@@ -623,34 +650,6 @@ location匹配规则
 要说明的是 , 这个rewrite有2个 , 一个是server_rewrite , 一个是rewrite , 这个阶段是由http框架执行的  ,  他们执行的阶段顺序是这样的:  server_rewrite(第二阶段)------&gt;find_config(第三阶段)-----&gt;rewrite(第四阶段) , 但是server_rewrite阶段和rewrite阶段用的都是同一个模块:rewrite模块
 rewrite模块提供了以下指令:
 return指令123456Syntax:return code [text];return code URL;return...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/10/Nginx中HTTP请求的11个阶段之第六阶段---PREACCESS (limit_req ,limit_conn模块)/" >
-            
-                <span>Nginx中HTTP请求的11个阶段之第六阶段---PREACCESS (limit_req ,limit_conn模块)</span>
-        </a>
-        <div class="abstract-content">
-            http_limit_conn_module模块通过http_limit_conn_module模块来限制每个客户端的并发连接 
-它的生效服务是全部的worker进程 , 能不能生效就取决于realip模块取到的真实ip
-###限制并发连接数
-123Syntax:  limit_conn zone number;Default:  —Context:  http, server, location
-定义共享内存大小和key关键字123Syntax:  limit_conn_zone key zone=name:size;Default:  —Context:  htt
-限制并发时的日志级...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2840,9 +2839,52 @@ return指令123456Syntax:return code [text];return code URL;return...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2855,6 +2897,11 @@ return指令123456Syntax:return code [text];return code URL;return...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">

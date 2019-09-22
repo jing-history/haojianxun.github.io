@@ -346,6 +346,49 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/05/04/docker网络/" >
+            
+                <span>docker网络</span>
+        </a>
+        <div class="abstract-content">
+            ovs sdn
+closed container只有lo接口
+bridgedocker0 是个交换机 给他地址就可以也成为网桥 
+查看docker网络
+1docker network inspect bridge
+查看网桥
+1brctl show
+docker网络的创建的时候  一半的网卡在docker上 一般的网卡在docker0上
+查看网络
+1ip link show
+就可以看到这些网络  @后面的字符就代表另外一半网卡  那半个网卡是在docker容器中
+进入docker中就可以看到另外一个网卡 使用命令ifconfig 查看
+进入docker中  ping docker0网桥的话...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker网络">docker网络</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/05/02/docker相关概念/" >
             
                 <span>docker相关概念</span>
@@ -624,41 +667,6 @@ method 3
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/01/24/docker安装/" >
-            
-                <span>docker安装</span>
-        </a>
-        <div class="abstract-content">
-            下面是基于CentOS
-##卸载旧版本
-旧版本的 Docker 称为  docker  或者  docker-engine  ，使用以下命令卸载旧版本：
-1234$ sudo yum remove docker \           docker-common \           docker-selinux \           docker-engine
-##使用 yum 源 安装
-执行以下命令安装依赖包：
-123$ sudo yum install -y yum-utils \          device-mapper-persistent-data \        ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/24</span>
             </div>
             <!-- tags  -->
             
@@ -2849,9 +2857,52 @@ method 3
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2864,6 +2915,11 @@ method 3
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">

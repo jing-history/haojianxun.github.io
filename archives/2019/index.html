@@ -346,6 +346,31 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >
+            
+                <span>kubernetes开发教程(4)--自动代码生成</span>
+        </a>
+        <div class="abstract-content">
+            在此讲中, 我们介绍go的自动代码生成功能, 事实上kubernetes在很多地方都在用code generators这个功能, 我接下来会说如何使用code generators来编写custom resources
+在kubernetes开发早期 , 随着越来越多的资源被加进系统, 越来越多的代码不得不被重写。 这个时候代码生成使得代码的维护更加容易 , 在早起是用Gengo library 之后在gengo的基础上, kubernetes发展出了k8s.io/code-generator 它是一个代码生成器的集合
+使用代码生成器通常在代码生成器的调用都是一样的方法, 只是group...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/08/kuberntes开发教程系列(3)了解和编写Custom Resources/" >
             
                 <span>kuberntes开发教程系列(3)--了解和编写Custom Resources</span>
@@ -586,34 +611,6 @@ kubelet rollout resume
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/01/10/kubernetes的本地持久化存储--Local Persistent Volume解析/" >
-            
-                <span>kubernetes的本地持久化存储--Local Persistent Volume解析</span>
-        </a>
-        <div class="abstract-content">
-            Local Persistent Volume是用来做什么的可以实现pod在本地的持久化存储, 而不需要依赖远程存储服务来提供持久化 , 即使这个pod再次被调度的时候 , 也能被再次调度到local pv所在的node
-出现原因既然有了hostPath Volume这种方式 , 为什么还要 再搞一个local PV呢 , 这是因为hostPath Volume这种方式并不适合在线上环境使用 , 原因如下:
-
-如果使用hostPath Volume这种方法 , 还得选择节点来调度
-需要事先创建好目录 , 而且还得注意权限的配置,  比如root用户创建的目录  , 普通用户就用不了了
-不...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/10</span>
             </div>
             <!-- tags  -->
             
@@ -2798,9 +2795,52 @@ kubelet rollout resume
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2813,6 +2853,11 @@ kubelet rollout resume
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">

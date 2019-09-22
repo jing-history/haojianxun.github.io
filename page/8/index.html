@@ -359,6 +359,43 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/12/kubernetes中的认证---default-token/" >
+            
+                <span>kubernetes中的认证---default-token</span>
+        </a>
+        <div class="abstract-content">
+            在一个pod中 , pod可以通过一个token来认证 pod中各个容器
+先查看pod
+1kubectl get pod
+我们随便挑一个pod来看
+1kubectl describe pod myapp-deploy-67f6f6b4dc-zsr5j
+可以看到 , 我们在创建的时候并没有指定存储卷 , 但是他自己就有了一个
+12345Volumes:  default-token-vwdjg:    Type:        Secret (a volume populated by a Secret)    SecretName:  default-token-vwdjg    Opt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/09/kubernetes  RBAC认证和serviceaccount/" >
             
                 <span>kubernetes认证和serviceaccount</span>
@@ -650,63 +687,6 @@ serviceaccount:  pod中的容器要访问api的时候用的
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "tips">tips</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/06/kubernetes组件/" >
-            
-                <span>kubernetes组件</span>
-        </a>
-        <div class="abstract-content">
-            组件
-master:
-
-API Server
-
-Scheduler
-
-Controller-Manager
-
-
-Node:
-
-kubelet
-容器引擎(docker)
-kube-proxy
-
-Pod
-
-自主式pod
-控制器管理的pod
-Replication-Controller
-Deployment
-StatefulSet
-DaemonSet
-Job , Cronjob
-
-
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
 </div>
             
@@ -2980,9 +2960,52 @@ Job , Cronjob
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -2995,6 +3018,11 @@ Job , Cronjob
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2019/09/10/kubernetes开发教程(4)自动代码生成/" >kubernetes开发教程(4)--自动代码生成</a>
+        </li>
     
     
         <li class="archive-post-item">
